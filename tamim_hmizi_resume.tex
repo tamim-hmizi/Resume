@@ -1,70 +1,240 @@
-\documentclass[11pt,a4paper,sans]{moderncv}
+\documentclass[10pt, letterpaper]{article}
 
-% ModernCV themes
-\moderncvstyle{classic}
-\moderncvcolor{black}
+% ====== ORIGINAL TEMPLATE PACKAGES (kept to avoid missing-macro errors) ======
+\usepackage[
+    ignoreheadfoot,
+    top=2 cm,
+    bottom=2 cm,
+    left=2 cm,
+    right=2 cm,
+    footskip=1.0 cm,
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 0, 0}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Tamim Hmizi - Resume},
+    pdfauthor={Tamim Hmizi},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
 
-% Character encoding
-\usepackage[utf8]{inputenc}
+% Ensure machine readable/ATS parsable:
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
 
-% Adjust page margins
-\usepackage[scale=0.9]{geometry}
+\usepackage{charter}
 
-% Personal data
-\name{Tamim}{Hmizi}
-\title{Software Engineer}
-\address{Ariana, Tunisia}{}{}
-\phone[mobile]{+216 21 611 816}
-\email{hmizitamim@hotmail.com}
-\social[linkedin]{tamimhmizi}
-\social[github]{tamim-hmizi}
+% ====== SETTINGS ======
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+\pagenumbering{gobble}
 
-% Remove page numbering
-\nopagenumbers{}
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titlespacing{\section}{-1pt}{0.3 cm}{0.2 cm}
 
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{0cm}{0cm}
+}{
+    \end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{threecolentry}[3][]{
+    \onecolentry
+    \def\thirdColumn{#3}
+    \setcolumnwidth{, \fill, 4.5 cm}
+    \begin{paracol}{3}
+    {\raggedright #2} \switchcolumn
+}{
+    \switchcolumn \raggedleft \thirdColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.25}
+}{
+    \par\kern\topsep
+}
+
+% Keep header link helper used in the template
+\let\hrefWithoutArrow\href
+
+% ====== DOCUMENT ======
 \begin{document}
 
-\makecvtitle
-\vspace{-14mm}
-% Professional Summary
-\textit{Passionate Full Stack Engineer specializing in Cloud, DevOps, and Web Development with expertise in automated infrastructure provisioning and intelligent deployment solutions}
+\begin{header}
+    \fontsize{22 pt}{22 pt}\selectfont \textbf{Tamim Hmizi}
+
+    \vspace{5 pt}
+
+    \normalsize
+    Ariana, Tunisia\,
+    \kern 6pt|\kern 6pt
+    \hrefWithoutArrow{mailto:hmizitamim@hotmail.com}{hmizitamim@hotmail.com}\,
+    \kern 6pt|\kern 6pt
+    \hrefWithoutArrow{tel:+21621611816}{+216 21 611 816}\,
+    \kern 6pt|\kern 6pt
+    \hrefWithoutArrow{https://linkedin.com/in/tamimhmizi}{linkedin.com/in/tamimhmizi}\,
+    \kern 6pt|\kern 6pt
+    \hrefWithoutArrow{https://github.com/tamim-hmizi}{github.com/tamim-hmizi}
+\end{header}
+
+\vspace{4 pt}
+
+\section{Professional Summary}
+\begin{onecolentry}
+\textbf{Full Stack Software Engineer} with a focus on Cloud, DevOps, and Web. I design scalable and secure systems, automate complex processes, and deliver reliable digital solutions that drive efficiency and growth.
+\end{onecolentry}
 
 
-\vspace{-2mm}
+\section{Core Skills}
+\begin{onecolentry}
+\textbf{Cloud \& DevOps:} AWS, Azure, GCP, OpenStack, Docker, Kubernetes, Jenkins, Terraform, Ansible, CI/CD, Git, IaC, Monitoring \\
+\textbf{Backend \& Frontend:} FastAPI, Django, Express.js, Spring Boot, Next.js, React, Angular, Java, Python, JavaScript \\
+\textbf{Data \& Systems:} MongoDB, DynamoDB, Linux, Windows \quad|\quad \textbf{Other:} GitHub API, LLaMA
+\end{onecolentry}
+
 \section{Professional Experience}
 
-\cventry{Feb 2025 -- Aug 2025}{PFE Intern - DevOps Platform Engineer}{RFC}{Ariana, Tunisia}{}{
-Built auto-provisioning platform using React, Express.js, MongoDB with FastAPI backend for GitHub API analysis and LLaMA model integration. Implemented intelligent K8s/VM recommendation system and automated infrastructure provisioning with Jenkins, SonarQube, Trivy, Nexus, Docker, Terraform, Ansible, and Prometheus/Grafana monitoring.}
+\begin{twocolentry}{Feb 2025 -- Aug 2025}
+\textbf{PFE Intern — DevOps Platform Engineer}, RFC — Ariana, Tunisia
+\end{twocolentry}
+\begin{onecolentry}
+\begin{highlights}
+    \item Built an auto-provisioning platform (React, Express.js, MongoDB, FastAPI) integrating GitHub API analysis and LLaMA.
+    \item Implemented an intelligent K8s/VM recommendation engine; automated provisioning with Jenkins, Terraform, Ansible, Docker, Nexus.
+    \item Established quality \& security gates with SonarQube and Trivy; added monitoring/alerting with Prometheus \& Grafana.
+\end{highlights}
+\end{onecolentry}
 
-\cventry{Jul 2024 -- Aug 2024}{Full Stack Engineer (Cloud, DevOps, Web Development)}{RFC}{Ariana, Tunisia}{}{
-Developed cloud-native applications with Next.js deployed on AWS (IAM, EKS, ECR, DynamoDB, CloudWatch). Automated CI/CD pipelines with Jenkins, Terraform, Docker, and GitHub.}
+\begin{twocolentry}{Jul 2024 -- Aug 2024}
+\textbf{Full Stack Engineer (Cloud, DevOps, Web)}, RFC — Ariana, Tunisia
+\end{twocolentry}
+\begin{onecolentry}
+\begin{highlights}
+    \item Developed cloud-native applications with Next.js on AWS (IAM, EKS, ECR, DynamoDB, CloudWatch).
+    \item Automated CI/CD with Jenkins, Terraform, Docker, and GitHub Actions.
+\end{highlights}
+\end{onecolentry}
 
-\cventry{Jul 2023 -- Aug 2023}{Web Developer}{ESPRIT}{Ariana, Tunisia}{}{
-Developed search engine application using MERN stack and integrated web scraping techniques using Python.}
+\begin{twocolentry}{Jul 2023 -- Aug 2023}
+\textbf{Web Developer}, ESPRIT — Ariana, Tunisia
+\end{twocolentry}
+\begin{onecolentry}
+\begin{highlights}
+    \item Built a search-engine style web app using the MERN stack.
+    \item Implemented Python-based web scraping for automated data ingestion.
+\end{highlights}
+\end{onecolentry}
 
-\cventry{Aug 2021 -- Sep 2021}{Network Engineer C-NOC}{Tunisie Telecom}{Tunis, Tunisia}{}{
-Provided B2B network support and maintenance, resolved connectivity issues and performed network monitoring.}
+\begin{twocolentry}{Aug 2021 -- Sep 2021}
+\textbf{Network Engineer C-NOC}, Tunisie Telecom — Tunis, Tunisia
+\end{twocolentry}
+\begin{onecolentry}
+\begin{highlights}
+    \item Provided B2B network support and maintenance; monitored links and resolved connectivity incidents.
+\end{highlights}
+\end{onecolentry}
 
 \section{Education}
-\cventry{Sep 2020 -- Aug 2025}{Software Engineering Degree}{ESPRIT}{Ariana, Tunisia}{}{}
+\begin{twocolentry}{Sep 2020 -- Aug 2025}
+\textbf{Software Engineering Degree}, ESPRIT — Ariana, Tunisia
+\end{twocolentry}
 
 \section{Projects}
-\cventry{Sep 2024 -- Nov 2024}{DevOps Pipeline Automation}{}{}{}{CI/CD pipeline for Spring Boot with Maven, Nexus, SonarQube, Docker, Kubernetes, Terraform, JUnit, Mockito, Prometheus, Grafana.}
-\cventry{Oct 2023 -- Apr 2024}{OpenStack + Kubernetes with DevOps}{}{}{}{OpenStack infrastructure, Kubernetes deployment using Ansible/Terraform, Ubuntu VMs, Angular/Spring Boot applications.}
+\begin{twocolentry}{Sep 2024 -- Nov 2024}
+\textbf{DevOps Pipeline Automation}
+\end{twocolentry}
+\begin{onecolentry}
+\begin{highlights}
+    \item CI/CD for Spring Boot with Maven, Nexus, SonarQube, Docker, Kubernetes, Terraform, JUnit, Mockito, Prometheus, Grafana.
+\end{highlights}
+\end{onecolentry}
+
+\begin{twocolentry}{Oct 2023 -- Apr 2024}
+\textbf{OpenStack + Kubernetes with DevOps}
+\end{twocolentry}
+\begin{onecolentry}
+\begin{highlights}
+    \item Provisioned OpenStack infra; deployed Kubernetes via Ansible/Terraform; hosted Angular/Spring Boot apps on Ubuntu VMs.
+\end{highlights}
+\end{onecolentry}
 
 \section{Certifications}
-\cvlistitem{Microsoft Azure Fundamentals AZ-900 (Microsoft, Coursera)}
-\cvlistitem{Introduction to Ansible (RedHat, Coursera)}
-\cvlistitem{AWS Certified Solutions Architect - Associate (AWS, Coursera)}
-
-
-
-\section{Technical Skills}
-\cvitem{Cloud \& DevOps}{AWS, Azure, GCP, OpenStack, Docker, Kubernetes, Jenkins, Terraform, Ansible, CI/CD, IaC, Git, Monitoring}
-\cvitem{Development}{Next.js, React, Angular, Express.js, Spring Boot, Python, JavaScript, Java, FastAPI, Django, Laravel}
-\cvitem{Databases \& Systems}{MongoDB, DynamoDB, Linux, Windows, LLaMA, GitHub API Integration}
+\begin{onecolentry}
+\begin{highlights}
+    \item Microsoft Azure Fundamentals (AZ-900) — Microsoft / Coursera
+    \item Introduction to Ansible — Red Hat / Coursera
+    \item AWS Certified Solutions Architect — Associate — AWS / Coursera
+\end{highlights}
+\end{onecolentry}
 
 \section{Languages}
-\cvitem{}{Arabic (Native), English (B2), French (B2)}
+\begin{onecolentry}
+Arabic (Native) \,|\, English (B2) \,|\, French (B2)
+\end{onecolentry}
 
 \end{document}
