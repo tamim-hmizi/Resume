@@ -1,0 +1,210 @@
+\documentclass[10pt, letterpaper]{article}
+
+\usepackage[
+    ignoreheadfoot,
+    top=1.5 cm,
+    bottom=2 cm,
+    left=2 cm,
+    right=2 cm,
+    footskip=1.0 cm,
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 0, 0}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Tamim Hmizi - CV},
+    pdfauthor={Tamim Hmizi},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage{charter}
+
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+\pagenumbering{gobble}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titlespacing{\section}{-1pt}{0.3 cm}{0.2 cm}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{0cm}{0cm}
+}{
+    \end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\begin{document}
+
+% ===== EN-TÊTE =====
+\begin{center}
+    \fontsize{22 pt}{22 pt}\selectfont \textbf{Tamim Hmizi}
+
+    \vspace{5 pt}
+
+    \normalsize
+    Ariana, Tunisie\,
+    \kern 6pt|\kern 6pt
+    \href{mailto:hmizitamim@hotmail.com}{hmizitamim@hotmail.com}\,
+    \kern 6pt|\kern 6pt
+    \href{tel:+21621611816}{+216 21 611 816}\,
+    \kern 6pt|\kern 6pt
+    \href{https://linkedin.com/in/tamimhmizi}{linkedin.com/in/tamimhmizi}\,
+    \kern 6pt|\kern 6pt
+    \href{https://github.com/tamim-hmizi}{github.com/tamim-hmizi}
+\end{center}
+
+\vspace{4 pt}
+
+% ===== RÉSUMÉ =====
+\section{Résumé Professionnel}
+\begin{onecolentry}
+\textbf{Ingénieur Full Stack \& DevOps} spécialisé dans les plateformes cloud, l’automatisation et les solutions web évolutives. Compétent dans la conception d’infrastructures sécurisées, l’optimisation de pipelines CI/CD et la livraison de produits numériques fiables qui accélèrent la performance des entreprises.
+\end{onecolentry}
+
+% ===== COMPÉTENCES =====
+\section{Compétences Clés}
+\begin{onecolentry}
+\textbf{Cloud \& DevOps :} AWS, Azure, GCP, Docker, Kubernetes, Jenkins, Terraform, Ansible, CI/CD, Git \\
+\textbf{Développement Logiciel :} React, Next.js, Django, FastAPI, Express.js, Spring Boot, Java, Python, JavaScript \\
+\textbf{Données \& Systèmes :} MongoDB, DynamoDB, Linux, Windows
+\end{onecolentry}
+
+% ===== EXPÉRIENCE =====
+\section{Expérience Professionnelle}
+
+\begin{twocolentry}{Fév 2025 -- Août 2025}
+\textbf{Ingénieur Plateforme DevOps (Projet de Fin d’Études)}, RFC — Ariana, Tunisie
+\end{twocolentry}
+\begin{onecolentry}
+\begin{highlights}
+    \item Conçu et livré une \textbf{plateforme DevOps auto-provisionnée} (React, FastAPI, MongoDB) intégrant l’analyse de l’API GitHub et LLaMA.
+    \item Développé un \textbf{moteur de recommandations basé sur l’IA} pour les déploiements Kubernetes vs. VM ; automatisé le provisioning avec Jenkins, Terraform et Ansible.
+    \item Renforcé la qualité de livraison avec SonarQube \& Trivy ; mis en place le monitoring via Prometheus \& Grafana.
+\end{highlights}
+\end{onecolentry}
+
+\begin{twocolentry}{Juil 2024 -- Août 2024}
+\textbf{Ingénieur Full Stack (Stage)}, RFC — Ariana, Tunisie
+\end{twocolentry}
+\begin{onecolentry}
+\begin{highlights}
+    \item Développé des \textbf{applications cloud-native sur AWS} (IAM, EKS, DynamoDB, CloudWatch) avec React/Next.js.
+    \item Automatisé des pipelines CI/CD avec Jenkins, Terraform, Docker et GitHub Actions, réduisant le temps de déploiement de 40\%.
+\end{highlights}
+\end{onecolentry}
+
+\begin{twocolentry}{Juil 2023 -- Août 2023}
+\textbf{Développeur Web (Stage)}, ESPRIT — Ariana, Tunisie
+\end{twocolentry}
+\begin{onecolentry}
+\begin{highlights}
+    \item Construit une \textbf{application web de type moteur de recherche} avec la stack MERN.
+    \item Automatisé l’ingestion de données avec du web scraping en Python.
+\end{highlights}
+\end{onecolentry}
+
+\begin{twocolentry}{Août 2021 -- Sep 2021}
+\textbf{Ingénieur Réseau (Stage)}, Tunisie Telecom — Tunis, Tunisie
+\end{twocolentry}
+\begin{onecolentry}
+\begin{highlights}
+    \item Supporté les opérations réseau B2B, surveillé les liaisons critiques et résolu des incidents de connectivité à haute priorité.
+\end{highlights}
+\end{onecolentry}
+
+% ===== FORMATION =====
+\section{Formation}
+\begin{twocolentry}{Sep 2020 -- Août 2025}
+\textbf{Diplôme d’Ingénieur en Informatique}, ESPRIT — Ariana, Tunisie
+\end{twocolentry}
+
+% ===== PROJETS =====
+\section{Projets}
+\begin{twocolentry}{Sep 2024 -- Nov 2024}
+\textbf{Automatisation de Pipeline CI/CD}
+\end{twocolentry}
+\begin{onecolentry}
+\begin{highlights}
+    \item Automatisé CI/CD pour applications Spring Boot avec Maven, Nexus, SonarQube, Docker, Kubernetes et Terraform.
+\end{highlights}
+\end{onecolentry}
+
+\begin{twocolentry}{Oct 2023 -- Avr 2024}
+\textbf{Déploiement OpenStack \& Kubernetes}
+\end{twocolentry}
+\begin{onecolentry}
+\begin{highlights}
+    \item Provisionné une infrastructure OpenStack ; déployé des clusters Kubernetes avec Ansible \& Terraform ; hébergé des applications Angular \& Spring Boot.
+\end{highlights}
+\end{onecolentry}
+
+% ===== CERTIFICATIONS =====
+\section{Certifications}
+\begin{onecolentry}
+\begin{highlights}
+    \item Microsoft Azure Fundamentals (AZ-900)
+    \item Introduction à Ansible — Red Hat
+    \item AWS Certified Solutions Architect — Associate
+\end{highlights}
+\end{onecolentry}
+
+% ===== LANGUES =====
+\section{Langues}
+\begin{onecolentry}
+Arabe (Natif) \,|\, Anglais (B2) \,|\, Français (B2)
+\end{onecolentry}
+
+\end{document}
