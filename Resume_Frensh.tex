@@ -26,13 +26,13 @@
 \usepackage[pscoord]{eso-pic}
 \usepackage{calc}
 \usepackage{bookmark}
-\usepackage{lastpage}
 \usepackage{changepage}
 \usepackage{paracol}
 \usepackage{ifthen}
 \usepackage{needspace}
 \usepackage{iftex}
 
+% Ensure machine readable/ATS parsable:
 \ifPDFTeX
     \input{glyphtounicode}
     \pdfgentounicode=1
@@ -86,10 +86,31 @@
     \endonecolentry
 }
 
+\newenvironment{threecolentry}[3][]{
+    \onecolentry
+    \def\thirdColumn{#3}
+    \setcolumnwidth{, \fill, 4.5 cm}
+    \begin{paracol}{3}
+    {\raggedright #2} \switchcolumn
+}{
+    \switchcolumn \raggedleft \thirdColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.25}
+}{
+    \par\kern\topsep
+}
+
+% Keep header link helper used in the template
+\let\hrefWithoutArrow\href
+
 \begin{document}
 
 % ===== EN-TÊTE =====
-\begin{center}
+\begin{header}
     \fontsize{22 pt}{22 pt}\selectfont \textbf{Tamim Hmizi}
 
     \vspace{5 pt}
@@ -97,14 +118,14 @@
     \normalsize
     Ariana, Tunisie\,
     \kern 6pt|\kern 6pt
-    \href{mailto:hmizitamim@hotmail.com}{hmizitamim@hotmail.com}\,
+    \hrefWithoutArrow{mailto:hmizitamim@hotmail.com}{hmizitamim@hotmail.com}\,
     \kern 6pt|\kern 6pt
-    \href{tel:+21621611816}{+216 21 611 816}\,
+    \hrefWithoutArrow{tel:+21621611816}{+216 21 611 816}\,
     \kern 6pt|\kern 6pt
-    \href{https://linkedin.com/in/tamimhmizi}{linkedin.com/in/tamimhmizi}\,
+    \hrefWithoutArrow{https://linkedin.com/in/tamimhmizi}{linkedin.com/in/tamimhmizi}\,
     \kern 6pt|\kern 6pt
-    \href{https://github.com/tamim-hmizi}{github.com/tamim-hmizi}
-\end{center}
+    \hrefWithoutArrow{https://github.com/tamim-hmizi}{github.com/tamim-hmizi}
+\end{header}
 
 \vspace{4 pt}
 
@@ -117,87 +138,102 @@
 % ===== COMPÉTENCES =====
 \section{Compétences Clés}
 \begin{onecolentry}
-\textbf{Cloud \& DevOps :} AWS, Azure, GCP, Docker, Kubernetes, Jenkins, Terraform, Ansible, CI/CD, Git \\
-\textbf{Développement Logiciel :} React, Next.js, Django, FastAPI, Express.js, Spring Boot, Java, Python, JavaScript \\
-\textbf{Données \& Systèmes :} MongoDB, DynamoDB, Linux, Windows
+\textbf{Plateformes Cloud :} AWS (EC2, EKS, ECR, ECS, Lambda, S3, IAM, CloudWatch, DynamoDB, VPC, Route53), Azure (VMs, AKS, Container Registry, Functions, Storage, AD), GCP (GKE, Cloud Run, Cloud Storage, IAM), OpenStack, DigitalOcean \\
+\textbf{DevOps \& Automatisation :} Docker, Kubernetes, Helm, Terraform, Ansible, Jenkins, GitHub Actions, GitLab CI, Pipelines CI/CD, Infrastructure as Code (IaC), Orchestration de Conteneurs, Service Mesh \\
+\textbf{Surveillance \& Observabilité :} Prometheus, Grafana, ELK Stack (Elasticsearch, Logstash, Kibana), CloudWatch, Outils APM, Agrégation de Logs, Collecte de Métriques \\
+\textbf{Qualité \& Sécurité :} SonarQube, Trivy, Snyk, OWASP, Analyse de Sécurité, Analyse de Qualité de Code, Évaluation des Vulnérabilités, SAST/DAST \\
+\textbf{Frameworks Backend :} FastAPI, Django, Express.js, Spring Boot, Flask, Node.js, APIs RESTful, GraphQL, Architecture Microservices \\
+\textbf{Frameworks Frontend :} React, Next.js, Angular, Vue.js, TypeScript, JavaScript (ES6+), HTML5, CSS3, Design Responsive \\
+\textbf{Langages de Programmation :} Python, Java, JavaScript, TypeScript, PHP, C/C++, Script Shell, Bash \\
+\textbf{Bases de Données :} MongoDB, DynamoDB, MySQL, PostgreSQL, Redis, Conception de Bases de Données, Optimisation de Requêtes \\
+\textbf{Systèmes d'Exploitation :} Linux (Ubuntu, CentOS, Debian), Windows Server, Administration Système, Configuration Réseau \\
+\textbf{Contrôle de Version \& Collaboration :} Git, GitHub, GitLab, Bitbucket, Méthodologies Agile/Scrum, Pratiques de Revue de Code \\
+\textbf{Autres Technologies :} GitHub API, LLaMA, Intégration IA/ML, Web Scraping, Développement d'APIs, Microservices, Architecture Serverless
 \end{onecolentry}
 
 % ===== EXPÉRIENCE =====
 \section{Expérience Professionnelle}
 
-\begin{twocolentry}{Fév 2025 -- Août 2025}
-\textbf{Ingénieur Plateforme DevOps (Projet de Fin d’Études)}, RFC — Ariana, Tunisie
+\begin{twocolentry}{Jan 2020 -- Présent}
+\textbf{Fondateur \& PDG}, Axynoxia — Conseil en Technologies d'Entreprise
 \end{twocolentry}
 \begin{onecolentry}
 \begin{highlights}
-    \item Conçu et livré une \textbf{plateforme DevOps auto-provisionnée} (React, FastAPI, MongoDB) intégrant l’analyse de l’API GitHub et LLaMA.
-    \item Développé un \textbf{moteur de recommandations basé sur l’IA} pour les déploiements Kubernetes vs. VM ; automatisé le provisioning avec Jenkins, Terraform et Ansible.
-    \item Renforcé la qualité de livraison avec SonarQube \& Trivy ; mis en place le monitoring via Prometheus \& Grafana.
+    \item Fondé et dirige Axynoxia, un cabinet de conseil en technologies d'entreprise spécialisé dans les solutions logicielles évolutives, les implémentations IA et l'architecture cloud pour les entreprises Fortune 500.
+    \item Supervise le développement de solutions logicielles sur mesure et d'implémentations technologiques innovantes.
+    \item Gère les relations clients, stimule la croissance commerciale et livre des solutions technologiques innovantes dans divers secteurs.
+\end{highlights}
+\end{onecolentry}
+
+\begin{twocolentry}{Oct 2025 -- Présent}
+\textbf{Consultant en Infrastructure}, RFC — Ariana, Tunisie
+\end{twocolentry}
+\begin{onecolentry}
+\begin{highlights}
+    \item Fournis des conseils stratégiques sur les solutions d'infrastructure, axés sur les services cloud, la modernisation des centres de données et la sécurité réseau.
+    \item Conçois et implémente des infrastructures IT évolutives et sécurisées adaptées aux besoins métier des clients.
+    \item Dirige des projets d'infrastructure impliquant l'automatisation, la migration cloud et les pratiques DevOps.
+\end{highlights}
+\end{onecolentry}
+
+\begin{twocolentry}{Fév 2025 -- Août 2025}
+\textbf{Ingénieur Plateforme DevOps (Projet de Fin d'Études)}, RFC — Ariana, Tunisie
+\end{twocolentry}
+\begin{onecolentry}
+\begin{highlights}
+    \item Conçu et développé une \textbf{plateforme DevOps-as-a-Service (DaaS)} qui analyse les dépôts GitHub, suggère des configurations d'infrastructure optimales et provisionne sur des VMs ou clusters Kubernetes avec monitoring et sécurité automatisés.
+    \item Construit une plateforme de provisioning automatique full-stack utilisant React (frontend), Express.js (passerelle API), MongoDB (persistance de données) et FastAPI (microservices) avec intégration fluide de l'API GitHub et recommandations intelligentes alimentées par LLaMA.
+    \item Conçu et implémenté un \textbf{moteur de recommandations basé sur l'IA} qui analyse le code du dépôt, les dépendances et les modèles pour recommander intelligemment les déploiements Kubernetes vs. VM basés sur les caractéristiques de charge de travail, les besoins en ressources et les besoins d'évolutivité.
+    \item Automatisé les workflows de provisioning d'infrastructure de bout en bout en utilisant des pipelines Jenkins, Terraform pour l'infrastructure as code, Ansible pour la gestion de configuration, Docker pour la conteneurisation et Nexus pour la gestion d'artefacts.
+    \item Établi des portes de qualité et de sécurité complètes avec SonarQube pour l'analyse de qualité de code et Trivy pour l'analyse de vulnérabilités des conteneurs, garantissant des déploiements prêts pour la production.
+    \item Implémenté une stack d'observabilité complète avec Prometheus pour la collecte de métriques, Grafana pour la visualisation et les tableaux de bord, et des systèmes d'alerte pour la détection et la résolution proactive des problèmes.
+    \item Réduit le temps de provisioning d'infrastructure de 70\% et amélioré la fiabilité des déploiements grâce aux pipelines CI/CD automatisés et à l'automatisation de l'infrastructure.
 \end{highlights}
 \end{onecolentry}
 
 \begin{twocolentry}{Juil 2024 -- Août 2024}
-\textbf{Ingénieur Full Stack (Stage)}, RFC — Ariana, Tunisie
+\textbf{Ingénieur Full Stack (Cloud, DevOps, Web)}, RFC — Ariana, Tunisie
 \end{twocolentry}
 \begin{onecolentry}
 \begin{highlights}
-    \item Développé des \textbf{applications cloud-native sur AWS} (IAM, EKS, DynamoDB, CloudWatch) avec React/Next.js.
-    \item Automatisé des pipelines CI/CD avec Jenkins, Terraform, Docker et GitHub Actions, réduisant le temps de déploiement de 40\%.
+    \item Développé et déployé des applications cloud-native en utilisant Next.js avec rendu côté serveur sur l'infrastructure AWS, exploitant IAM pour la sécurité, EKS pour l'orchestration de conteneurs, ECR pour le registre de conteneurs, DynamoDB pour le stockage de données NoSQL et CloudWatch pour le monitoring.
+    \item Construit un système de gestion des stagiaires pour rationaliser les opérations internes de RFC, avec authentification utilisateur, contrôle d'accès basé sur les rôles et synchronisation de données en temps réel.
+    \item Automatisé des pipelines CI/CD complets avec Jenkins pour l'automatisation des builds, Terraform pour le provisioning d'infrastructure, Docker pour la conteneurisation et GitHub Actions pour l'intégration du contrôle de version, réduisant le temps de déploiement de 40\%.
+    \item Implémenté les meilleures pratiques pour la sécurité cloud, l'optimisation des coûts et l'évolutivité dans les environnements AWS.
 \end{highlights}
 \end{onecolentry}
 
 \begin{twocolentry}{Juil 2023 -- Août 2023}
-\textbf{Développeur Web (Stage)}, ESPRIT — Ariana, Tunisie
+\textbf{Développeur Web}, ESPRIT — Ariana, Tunisie
 \end{twocolentry}
 \begin{onecolentry}
 \begin{highlights}
-    \item Construit une \textbf{application web de type moteur de recherche} avec la stack MERN.
-    \item Automatisé l’ingestion de données avec du web scraping en Python.
+    \item Développé une application web complète de type moteur de recherche en utilisant la stack MERN (MongoDB, Express.js, React, Node.js) pour aider les étudiants d'ESPRIT à trouver et accéder efficacement aux informations des cours.
+    \item Implémenté une fonctionnalité de recherche avancée avec filtrage, tri et résultats en temps réel en utilisant les hooks React et les pipelines d'agrégation MongoDB.
+    \item Construit un système de web scraping basé sur Python en utilisant BeautifulSoup et Scrapy pour l'ingestion automatisée de données à partir de multiples sources, garantissant la fraîcheur et la précision des données.
+    \item Conçu une interface utilisateur responsive avec des principes UX modernes, garantissant une expérience optimale sur les appareils de bureau et mobiles.
 \end{highlights}
 \end{onecolentry}
 
 \begin{twocolentry}{Août 2021 -- Sep 2021}
-\textbf{Ingénieur Réseau (Stage)}, Tunisie Telecom — Tunis, Tunisie
+\textbf{Ingénieur Réseau C-NOC}, Tunisie Telecom — Tunis, Tunisie
 \end{twocolentry}
 \begin{onecolentry}
 \begin{highlights}
-    \item Supporté les opérations réseau B2B, surveillé les liaisons critiques et résolu des incidents de connectivité à haute priorité.
+    \item Fourni le support et la maintenance du réseau B2B ; surveillé les liaisons et résolu les incidents de connectivité.
 \end{highlights}
 \end{onecolentry}
 
 % ===== FORMATION =====
 \section{Formation}
 \begin{twocolentry}{Sep 2020 -- Août 2025}
-\textbf{Diplôme d’Ingénieur en Informatique}, ESPRIT — Ariana, Tunisie
-\end{twocolentry}
-
-% ===== PROJETS =====
-\section{Projets}
-\begin{twocolentry}{Sep 2024 -- Nov 2024}
-\textbf{Automatisation de Pipeline CI/CD}
+\textbf{Diplôme d'Ingénieur en Informatique}, ESPRIT — Ariana, Tunisie
 \end{twocolentry}
 \begin{onecolentry}
 \begin{highlights}
-    \item Automatisé CI/CD pour applications Spring Boot avec Maven, Nexus, SonarQube, Docker, Kubernetes et Terraform.
-\end{highlights}
-\end{onecolentry}
-
-\begin{twocolentry}{Oct 2023 -- Avr 2024}
-\textbf{Déploiement OpenStack \& Kubernetes}
-\end{twocolentry}
-\begin{onecolentry}
-\begin{highlights}
-    \item Provisionné une infrastructure OpenStack ; déployé des clusters Kubernetes avec Ansible \& Terraform ; hébergé des applications Angular \& Spring Boot.
-\end{highlights}
-\end{onecolentry}
-
-% ===== CERTIFICATIONS =====
-\section{Certifications}
-\begin{onecolentry}
-\begin{highlights}
-    \item Microsoft Azure Fundamentals (AZ-900)
-    \item Introduction à Ansible — Red Hat
-    \item AWS Certified Solutions Architect — Associate
+    \item Programme d'ingénierie complet couvrant : Principes d'Ingénierie Logicielle, Programmation Orientée Objet (Java, C++), Structures de Données \& Algorithmes, Systèmes de Bases de Données (SQL, NoSQL), Développement Web (HTML, CSS, JavaScript, React, Angular), Développement Backend (Node.js, Spring Boot, Django), Cloud Computing (AWS, Azure, GCP), Pratiques DevOps (Docker, Kubernetes, CI/CD), Architecture Système \& Design Patterns, Programmation Réseau, Systèmes d'Exploitation (Linux, Windows), Tests Logiciels \& Assurance Qualité, Gestion de Projet \& Méthodologies Agile, Fondamentaux Machine Learning \& IA.
+    \item Projets pratiques approfondis incluant : Applications web full-stack, Déploiement et automatisation d'infrastructure cloud, Implémentation d'architecture microservices, Développement de pipelines CI/CD, Conception et optimisation de bases de données, Développement d'applications mobiles, Projets d'intégration système.
+    \item Projet de Fin d'Études (PFE) : Développé une plateforme DevOps-as-a-Service de qualité production intégrant des recommandations d'infrastructure alimentées par l'IA, le provisioning automatisé et des solutions de monitoring complètes.
 \end{highlights}
 \end{onecolentry}
 

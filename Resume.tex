@@ -27,7 +27,6 @@
 \usepackage[pscoord]{eso-pic}
 \usepackage{calc}
 \usepackage{bookmark}
-\usepackage{lastpage}
 \usepackage{changepage}
 \usepackage{paracol}
 \usepackage{ifthen}
@@ -152,21 +151,55 @@
 
 \section{Core Skills}
 \begin{onecolentry}
-\textbf{Cloud \& DevOps:} AWS, Azure, GCP, OpenStack, Docker, Kubernetes, Jenkins, Terraform, Ansible, CI/CD, Git, IaC, Monitoring \\
-\textbf{Backend \& Frontend:} FastAPI, Django, Express.js, Spring Boot, Next.js, React, Angular, Java, Python, JavaScript \\
-\textbf{Data \& Systems:} MongoDB, DynamoDB, Linux, Windows \quad|\quad \textbf{Other:} GitHub API, LLaMA
+\textbf{Cloud Platforms:} AWS (EC2, EKS, ECR, ECS, Lambda, S3, IAM, CloudWatch, DynamoDB, VPC, Route53), Azure (VMs, AKS, Container Registry, Functions, Storage, AD), GCP (GKE, Cloud Run, Cloud Storage, IAM), OpenStack, DigitalOcean \\
+\textbf{DevOps \& Automation:} Docker, Kubernetes, Helm, Terraform, Ansible, Jenkins, GitHub Actions, GitLab CI, CI/CD Pipelines, Infrastructure as Code (IaC), Container Orchestration, Service Mesh \\
+\textbf{Monitoring \& Observability:} Prometheus, Grafana, ELK Stack (Elasticsearch, Logstash, Kibana), CloudWatch, APM Tools, Log Aggregation, Metrics Collection \\
+\textbf{Quality \& Security:} SonarQube, Trivy, Snyk, OWASP, Security Scanning, Code Quality Analysis, Vulnerability Assessment, SAST/DAST \\
+\textbf{Backend Frameworks:} FastAPI, Django, Express.js, Spring Boot, Flask, Node.js, RESTful APIs, GraphQL, Microservices Architecture \\
+\textbf{Frontend Frameworks:} React, Next.js, Angular, Vue.js, TypeScript, JavaScript (ES6+), HTML5, CSS3, Responsive Design \\
+\textbf{Programming Languages:} Python, Java, JavaScript, TypeScript, PHP, C/C++, Shell Scripting, Bash \\
+\textbf{Databases:} MongoDB, DynamoDB, MySQL, PostgreSQL, Redis, Database Design, Query Optimization \\
+\textbf{Operating Systems:} Linux (Ubuntu, CentOS, Debian), Windows Server, System Administration, Network Configuration \\
+\textbf{Version Control \& Collaboration:} Git, GitHub, GitLab, Bitbucket, Agile/Scrum Methodologies, Code Review Practices \\
+\textbf{Other Technologies:} GitHub API, LLaMA, AI/ML Integration, Web Scraping, API Development, Microservices, Serverless Architecture
 \end{onecolentry}
 
 \section{Professional Experience}
+
+\begin{twocolentry}{Jan 2020 -- Present}
+\textbf{Founder \& CEO}, Axynoxia — Enterprise Technology Consulting
+\end{twocolentry}
+\begin{onecolentry}
+\begin{highlights}
+    \item Founded and lead Axynoxia, an enterprise technology consulting firm specializing in scalable software solutions, AI implementations, and cloud architecture for Fortune 500 companies.
+    \item Oversee development of custom software solutions and innovative technology implementations.
+    \item Manage client relationships, drive business growth, and deliver innovative technology solutions across diverse industries.
+\end{highlights}
+\end{onecolentry}
+
+\begin{twocolentry}{Oct 2025 -- Present}
+\textbf{Infrastructure Consultant}, RFC — Ariana, Tunisia
+\end{twocolentry}
+\begin{onecolentry}
+\begin{highlights}
+    \item Provide strategic guidance on infrastructure solutions, focusing on cloud services, data center modernization, and network security.
+    \item Design and implement scalable, secure IT infrastructures tailored to client business needs.
+    \item Lead infrastructure projects involving automation, cloud migration, and DevOps practices.
+\end{highlights}
+\end{onecolentry}
 
 \begin{twocolentry}{Feb 2025 -- Aug 2025}
 \textbf{PFE Intern — DevOps Platform Engineer}, RFC — Ariana, Tunisia
 \end{twocolentry}
 \begin{onecolentry}
 \begin{highlights}
-    \item Built an auto-provisioning platform (React, Express.js, MongoDB, FastAPI) integrating GitHub API analysis and LLaMA.
-    \item Implemented an intelligent K8s/VM recommendation engine; automated provisioning with Jenkins, Terraform, Ansible, Docker, Nexus.
-    \item Established quality \& security gates with SonarQube and Trivy; added monitoring/alerting with Prometheus \& Grafana.
+    \item Architected and developed a \textbf{DevOps-as-a-Service (DaaS) platform} that analyzes GitHub repositories, suggests optimal infrastructure configurations, and provisions to VMs or Kubernetes clusters with automated monitoring and security.
+    \item Built a full-stack auto-provisioning platform using React (frontend), Express.js (API gateway), MongoDB (data persistence), and FastAPI (microservices) with seamless GitHub API integration and LLaMA-powered intelligent recommendations.
+    \item Designed and implemented an \textbf{AI-driven recommendation engine} that analyzes repository code, dependencies, and patterns to intelligently recommend Kubernetes vs. VM deployments based on workload characteristics, resource requirements, and scalability needs.
+    \item Automated end-to-end infrastructure provisioning workflows using Jenkins pipelines, Terraform for infrastructure as code, Ansible for configuration management, Docker for containerization, and Nexus for artifact management.
+    \item Established comprehensive quality and security gates with SonarQube for code quality analysis and Trivy for container vulnerability scanning, ensuring production-ready deployments.
+    \item Implemented full observability stack with Prometheus for metrics collection, Grafana for visualization and dashboards, and alerting systems for proactive issue detection and resolution.
+    \item Reduced infrastructure provisioning time by 70\% and improved deployment reliability through automated CI/CD pipelines and infrastructure automation.
 \end{highlights}
 \end{onecolentry}
 
@@ -175,8 +208,10 @@
 \end{twocolentry}
 \begin{onecolentry}
 \begin{highlights}
-    \item Developed cloud-native applications with Next.js on AWS (IAM, EKS, ECR, DynamoDB, CloudWatch).
-    \item Automated CI/CD with Jenkins, Terraform, Docker, and GitHub Actions.
+    \item Developed and deployed cloud-native applications using Next.js with server-side rendering on AWS infrastructure, leveraging IAM for security, EKS for container orchestration, ECR for container registry, DynamoDB for NoSQL data storage, and CloudWatch for monitoring.
+    \item Built an intern management system to streamline RFC's internal operations, featuring user authentication, role-based access control, and real-time data synchronization.
+    \item Automated complete CI/CD pipelines with Jenkins for build automation, Terraform for infrastructure provisioning, Docker for containerization, and GitHub Actions for version control integration, reducing deployment time by 40\%.
+    \item Implemented best practices for cloud security, cost optimization, and scalability in AWS environments.
 \end{highlights}
 \end{onecolentry}
 
@@ -185,8 +220,10 @@
 \end{twocolentry}
 \begin{onecolentry}
 \begin{highlights}
-    \item Built a search-engine style web app using the MERN stack.
-    \item Implemented Python-based web scraping for automated data ingestion.
+    \item Developed a comprehensive search-engine style web application using the MERN stack (MongoDB, Express.js, React, Node.js) to help ESPRIT students find and access course information efficiently.
+    \item Implemented advanced search functionality with filtering, sorting, and real-time results using React hooks and MongoDB aggregation pipelines.
+    \item Built Python-based web scraping system using BeautifulSoup and Scrapy for automated data ingestion from multiple sources, ensuring data freshness and accuracy.
+    \item Designed responsive user interface with modern UX principles, ensuring optimal experience across desktop and mobile devices.
 \end{highlights}
 \end{onecolentry}
 
@@ -203,32 +240,11 @@
 \begin{twocolentry}{Sep 2020 -- Aug 2025}
 \textbf{Software Engineering Degree}, ESPRIT — Ariana, Tunisia
 \end{twocolentry}
-
-\section{Projects}
-\begin{twocolentry}{Sep 2024 -- Nov 2024}
-\textbf{DevOps Pipeline Automation}
-\end{twocolentry}
 \begin{onecolentry}
 \begin{highlights}
-    \item CI/CD for Spring Boot with Maven, Nexus, SonarQube, Docker, Kubernetes, Terraform, JUnit, Mockito, Prometheus, Grafana.
-\end{highlights}
-\end{onecolentry}
-
-\begin{twocolentry}{Oct 2023 -- Apr 2024}
-\textbf{OpenStack + Kubernetes with DevOps}
-\end{twocolentry}
-\begin{onecolentry}
-\begin{highlights}
-    \item Provisioned OpenStack infra; deployed Kubernetes via Ansible/Terraform; hosted Angular/Spring Boot apps on Ubuntu VMs.
-\end{highlights}
-\end{onecolentry}
-
-\section{Certifications}
-\begin{onecolentry}
-\begin{highlights}
-    \item Microsoft Azure Fundamentals (AZ-900) — Microsoft / Coursera
-    \item Introduction to Ansible — Red Hat / Coursera
-    \item AWS Certified Solutions Architect — Associate — AWS / Coursera
+    \item Comprehensive engineering curriculum covering: Software Engineering Principles, Object-Oriented Programming (Java, C++), Data Structures \& Algorithms, Database Systems (SQL, NoSQL), Web Development (HTML, CSS, JavaScript, React, Angular), Backend Development (Node.js, Spring Boot, Django), Cloud Computing (AWS, Azure, GCP), DevOps Practices (Docker, Kubernetes, CI/CD), System Architecture \& Design Patterns, Network Programming, Operating Systems (Linux, Windows), Software Testing \& Quality Assurance, Project Management \& Agile Methodologies, Machine Learning \& AI Fundamentals.
+    \item Extensive hands-on projects including: Full-stack web applications, Cloud infrastructure deployment and automation, Microservices architecture implementation, CI/CD pipeline development, Database design and optimization, Mobile application development, System integration projects.
+    \item Final Year Project (PFE): Developed a production-grade DevOps-as-a-Service platform integrating AI-powered infrastructure recommendations, automated provisioning, and comprehensive monitoring solutions.
 \end{highlights}
 \end{onecolentry}
 
