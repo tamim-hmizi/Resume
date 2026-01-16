@@ -1,246 +1,166 @@
 \documentclass[10pt, letterpaper]{article}
 
+% ================= PACKAGES =================
 \usepackage[
     ignoreheadfoot,
-    top=1.5 cm,
-    bottom=2 cm,
-    left=2 cm,
-    right=2 cm,
-    footskip=1.0 cm,
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm
 ]{geometry}
+
 \usepackage{titlesec}
-\usepackage{tabularx}
-\usepackage{array}
-\usepackage[dvipsnames]{xcolor}
-\definecolor{primaryColor}{RGB}{0, 0, 0}
 \usepackage{enumitem}
-\usepackage{fontawesome5}
-\usepackage{amsmath}
-\usepackage[
-    pdftitle={Tamim Hmizi - CV},
-    pdfauthor={Tamim Hmizi},
-    pdfcreator={LaTeX with RenderCV},
-    colorlinks=true,
-    urlcolor=primaryColor
-]{hyperref}
-\usepackage[pscoord]{eso-pic}
-\usepackage{calc}
-\usepackage{bookmark}
-\usepackage{changepage}
-\usepackage{paracol}
-\usepackage{ifthen}
+\usepackage{hyperref}
 \usepackage{needspace}
 \usepackage{iftex}
+\usepackage{charter}
+\usepackage{microtype} % FIXES encoding & copy artifacts
 
-% Ensure machine readable/ATS parsable:
+% ================= ATS / ENCODING =================
 \ifPDFTeX
-    \input{glyphtounicode}
-    \pdfgentounicode=1
-    \usepackage[T1]{fontenc}
-    \usepackage[utf8]{inputenc}
-    \usepackage{lmodern}
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{lmodern}
 \fi
 
-\usepackage{charter}
-
-\raggedright
-\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
 \pagestyle{empty}
 \setcounter{secnumdepth}{0}
 \setlength{\parindent}{0pt}
-\setlength{\topskip}{0pt}
-\setlength{\columnsep}{0.15cm}
-\pagenumbering{gobble}
+\renewcommand\labelitemi{$\bullet$}
 
-\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
-\titlespacing{\section}{-1pt}{0.3 cm}{0.2 cm}
-
-\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+\titleformat{\section}{\bfseries\large}{}{0pt}{}[\titlerule]
+\titlespacing{\section}{0pt}{6pt}{6pt}
 
 \newenvironment{highlights}{
-    \begin{itemize}[
-        topsep=0.10 cm,
-        parsep=0.10 cm,
-        partopsep=0pt,
-        itemsep=0pt,
-        leftmargin=10pt
-    ]
+\begin{itemize}[leftmargin=12pt, itemsep=2pt]
 }{
-    \end{itemize}
+\end{itemize}
 }
 
-\newenvironment{onecolentry}{
-    \begin{adjustwidth}{0cm}{0cm}
-}{
-    \end{adjustwidth}
+\hypersetup{
+  colorlinks=true,
+  urlcolor=black
 }
 
-\newenvironment{twocolentry}[2][]{
-    \onecolentry
-    \def\secondColumn{#2}
-    \setcolumnwidth{\fill, 4.5 cm}
-    \begin{paracol}{2}
-}{
-    \switchcolumn \raggedleft \secondColumn
-    \end{paracol}
-    \endonecolentry
-}
-
-\newenvironment{threecolentry}[3][]{
-    \onecolentry
-    \def\thirdColumn{#3}
-    \setcolumnwidth{, \fill, 4.5 cm}
-    \begin{paracol}{3}
-    {\raggedright #2} \switchcolumn
-}{
-    \switchcolumn \raggedleft \thirdColumn
-    \end{paracol}
-    \endonecolentry
-}
-
-\newenvironment{header}{
-    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.25}
-}{
-    \par\kern\topsep
-}
-
-% Keep header link helper used in the template
-\let\hrefWithoutArrow\href
-
+% ================= DOCUMENT =================
 \begin{document}
 
-% ===== EN-TÊTE =====
-\begin{header}
-    \fontsize{22 pt}{22 pt}\selectfont \textbf{Tamim Hmizi}
+% ================= HEADER =================
+\begin{center}
+{\fontsize{22}{22}\selectfont \textbf{Tamim Hmizi}} \\[4pt]
+{\large Consultant Infrastructure \,|\, Cloud \& DevOps \,|\, SaaS \& Full-Stack} \\[6pt]
+Ariana, Tunisie \;|\;
+\href{mailto:tamimhmizi@icloud.com}{tamimhmizi@icloud.com} \;|\;
++216 21 611 816 \;|\;
+\href{https://linkedin.com/in/tamimhmizi}{linkedin.com/in/tamimhmizi} \;|\;
+\href{https://github.com/tamim-hmizi}{github.com/tamim-hmizi} \;|\;
+\href{https://tamim-hmizi.github.io/Portfolio/}{Portfolio}
+\end{center}
 
-    \vspace{5 pt}
+% ================= PROFILE =================
+\section{Profil Professionnel}
+\textbf{Consultant Infrastructure / Ingénieur Cloud \& DevOps} disposant d’une expérience concrète au sein d’une entreprise spécialisée en \textbf{Cloud, DevOps et développement d’applications SaaS et Full-Stack}. Solide expertise dans la conception, le déploiement, l’automatisation, la supervision et l’exploitation d’\textbf{infrastructures hybrides et cloud-native} supportant des produits logiciels modernes. Compétences confirmées en CI/CD, observabilité, réseaux, systèmes de sauvegarde et livraison applicative de bout en bout en environnements professionnels et de production.
 
-    \normalsize
-    Ariana, Tunisie\,
-    \kern 6pt|\kern 6pt
-    \hrefWithoutArrow{mailto:tamimhmizi@icloud.com}{tamimhmizi@icloud.com}\,
-    \kern 6pt|\kern 6pt
-    \hrefWithoutArrow{tel:+21621611816}{+216 21 611 816}\,
-    \kern 6pt|\kern 6pt
-    \hrefWithoutArrow{https://linkedin.com/in/tamimhmizi}{linkedin.com/in/tamimhmizi}\,
-    \kern 6pt|\kern 6pt
-    \hrefWithoutArrow{https://github.com/tamim-hmizi}{github.com/tamim-hmizi}
-\end{header}
+% ================= SKILLS =================
+\section{Compétences Techniques}
 
-\vspace{4 pt}
+\textbf{Cloud \& Plateformes :} Azure, AWS, GCP, OpenStack, DigitalOcean, Cloud hybride, IaaS, PaaS \\
+\textbf{Conteneurs \& Orchestration :} Docker, Docker Compose, Kubernetes, Helm \\
+\textbf{DevOps \& Automatisation :} Jenkins, GitHub Actions, GitLab CI, Terraform, Ansible, Pipelines CI/CD, Infrastructure as Code (IaC), Nexus \\
+\textbf{Supervision \& Observabilité :} Grafana, Prometheus, ELK Stack, CloudWatch, Alerting, Métriques, Tableaux de bord \\
+\textbf{Sécurité \& Qualité :} Pare-feu Fortinet, VPN, Segmentation réseau, IAM, SonarQube, Trivy, OWASP \\
+\textbf{Sauvegarde \& PRA :} Commvault (sauvegardes, tests de restauration, analyse d’échecs, reporting) \\
+\textbf{Systèmes \& Identité :} Linux, Windows Server, Active Directory, Microsoft 365 \\
+\textbf{Langages de Programmation :} Python, Bash, Java, JavaScript, TypeScript, C, C++, C\#, PHP, Assembleur, SQL \\
+\textbf{Frameworks Backend :} FastAPI, Django, Flask, Express.js, Spring Boot, Node.js, APIs REST \\
+\textbf{Frameworks Frontend :} Angular, React, Next.js, Vue.js, HTML, CSS \\
+\textbf{Bases de Données :} MongoDB, MySQL, PostgreSQL, DynamoDB, Redis \\
+\textbf{Gestion de Code :} Git, GitHub, GitLab, Bitbucket, Gitea
 
-% ===== RÉSUMÉ =====
-\section{Résumé Professionnel}
-\begin{onecolentry}
-\textbf{Ingénieur Full Stack \& DevOps} spécialisé dans les plateformes cloud, l’automatisation et les solutions web évolutives. Compétent dans la conception d’infrastructures sécurisées, l’optimisation de pipelines CI/CD et la livraison de produits numériques fiables qui accélèrent la performance des entreprises.
-\end{onecolentry}
-
-% ===== COMPÉTENCES =====
-\section{Compétences Clés}
-\begin{onecolentry}
-\textbf{Plateformes Cloud :} AWS (EC2, EKS, ECR, ECS, Lambda, S3, IAM, CloudWatch, DynamoDB, VPC, Route53), Azure (VMs, AKS, Container Registry, Functions, Storage, AD), GCP (GKE, Cloud Run, Cloud Storage, IAM), OpenStack, DigitalOcean \\
-\textbf{DevOps \& Automatisation :} Docker, Kubernetes, Helm, Terraform, Ansible, Jenkins, GitHub Actions, GitLab CI, Pipelines CI/CD, Infrastructure as Code (IaC), Orchestration de Conteneurs, Service Mesh \\
-\textbf{Surveillance \& Observabilité :} Prometheus, Grafana, ELK Stack (Elasticsearch, Logstash, Kibana), CloudWatch, Outils APM, Agrégation de Logs, Collecte de Métriques \\
-\textbf{Qualité \& Sécurité :} SonarQube, Trivy, Snyk, OWASP, Analyse de Sécurité, Analyse de Qualité de Code, Évaluation des Vulnérabilités, SAST/DAST \\
-\textbf{Frameworks Backend :} FastAPI, Django, Express.js, Spring Boot, Flask, Node.js, APIs RESTful, GraphQL, Architecture Microservices \\
-\textbf{Frameworks Frontend :} React, Next.js, Angular, Vue.js, TypeScript, JavaScript (ES6+), HTML5, CSS3, Design Responsive \\
-\textbf{Langages de Programmation :} Python, Java, JavaScript, TypeScript, PHP, C/C++, Script Shell, Bash \\
-\textbf{Bases de Données :} MongoDB, DynamoDB, MySQL, PostgreSQL, Redis, Conception de Bases de Données, Optimisation de Requêtes \\
-\textbf{Systèmes d'Exploitation :} Linux (Ubuntu, CentOS, Debian), Windows Server, Administration Système, Configuration Réseau \\
-\textbf{Contrôle de Version \& Collaboration :} Git, GitHub, GitLab, Bitbucket, Méthodologies Agile/Scrum, Pratiques de Revue de Code \\
-\textbf{Autres Technologies :} GitHub API, LLaMA, Intégration IA/ML, Web Scraping, Développement d'APIs, Microservices, Architecture Serverless
-\end{onecolentry}
-
-% ===== EXPÉRIENCE =====
+% ================= EXPERIENCE =================
 \section{Expérience Professionnelle}
 
-\begin{twocolentry}{Jan 2025 -- Présent}
-\textbf{Fondateur \& PDG}, Axynoxia — Conseil en Technologies d'Entreprise
-\end{twocolentry}
-\begin{onecolentry}
+\textbf{Consultant Infrastructure — RFC} \hfill Octobre 2025 -- Présent \\
+Ariana, Tunisie
 \begin{highlights}
-    \item Fondé et dirige Axynoxia, un cabinet de conseil en technologies d'entreprise spécialisé dans les solutions logicielles évolutives, les implémentations IA et l'architecture cloud pour les entreprises Fortune 500.
-    \item Supervise le développement de solutions logicielles sur mesure et d'implémentations technologiques innovantes.
-    \item Gère les relations clients, stimule la croissance commerciale et livre des solutions technologiques innovantes dans divers secteurs.
+\item Exploitation et support d’environnements cloud et hybrides pour la fourniture de services SaaS et d’infrastructures d’entreprise.
+\item Supervision des ressources de calcul, de stockage et d’infrastructure via des tableaux de bord Grafana.
+\item Mise en place et maintenance de pipelines de métriques basés sur Prometheus pour la détection proactive des incidents.
+\item Déploiement et administration de Gitea sur des machines virtuelles Linux en tant que plateforme Git auto-hébergée.
+\item Configuration, maintenance et dépannage de pare-feu Fortinet (politiques de sécurité, segmentation, routage, NAT).
+\item Exploitation de l’infrastructure de sauvegarde Commvault : exécution, analyse des échecs, validation des restaurations et reporting.
+\item Animation de formations techniques et d’ateliers clients autour de l’infrastructure et des stratégies de sauvegarde.
+\item Gestion des objets Active Directory et participation à l’administration des tenants Microsoft 365.
 \end{highlights}
-\end{onecolentry}
 
-\begin{twocolentry}{Oct 2025 -- Présent}
-\textbf{Consultant en Infrastructure}, RFC — Ariana, Tunisie
-\end{twocolentry}
-\begin{onecolentry}
+\textbf{Ingénieur Plateforme DevOps — Projet de Fin d’Études (PFE), RFC} \hfill Février 2025 -- Août 2025
 \begin{highlights}
-    \item Fournis des conseils stratégiques sur les solutions d'infrastructure, axés sur les services cloud, la modernisation des centres de données et la sécurité réseau.
-    \item Conçois et implémente des infrastructures IT évolutives et sécurisées adaptées aux besoins métier des clients.
-    \item Dirige des projets d'infrastructure impliquant l'automatisation, la migration cloud et les pratiques DevOps.
+\item Conception et développement d’une plateforme DevOps-as-a-Service pour automatiser l’analyse, le déploiement et la supervision des applications.
+\item Architecture modulaire basée sur React, Express.js, FastAPI et MongoDB.
+\item Intégration de l’API GitHub pour l’analyse des dépôts et workflows.
+\item Conception et mise en œuvre de pipelines CI/CD avec Jenkins.
+\item Automatisation du provisionnement avec Terraform et Ansible.
+\item Conteneurisation avec Docker et gestion des artefacts via Nexus.
+\item Mise en place de l’observabilité avec Prometheus et Grafana.
+\item Réduction du temps de provisionnement d’environ 70\%.
 \end{highlights}
-\end{onecolentry}
 
-\begin{twocolentry}{Fév 2025 -- Août 2025}
-\textbf{Ingénieur Plateforme DevOps (Projet de Fin d'Études)}, RFC — Ariana, Tunisie
-\end{twocolentry}
-\begin{onecolentry}
+\textbf{Ingénieur Cloud \& Full-Stack — Stage, RFC} \hfill Juillet 2024 -- Août 2024
 \begin{highlights}
-    \item Conçu et développé une \textbf{plateforme DevOps-as-a-Service (DaaS)} qui analyse les dépôts GitHub, suggère des configurations d'infrastructure optimales et provisionne sur des VMs ou clusters Kubernetes avec monitoring et sécurité automatisés.
-    \item Construit une plateforme de provisioning automatique full-stack utilisant React (frontend), Express.js (passerelle API), MongoDB (persistance de données) et FastAPI (microservices) avec intégration fluide de l'API GitHub et recommandations intelligentes alimentées par LLaMA.
-    \item Conçu et implémenté un \textbf{moteur de recommandations basé sur l'IA} qui analyse le code du dépôt, les dépendances et les modèles pour recommander intelligemment les déploiements Kubernetes vs. VM basés sur les caractéristiques de charge de travail, les besoins en ressources et les besoins d'évolutivité.
-    \item Automatisé les workflows de provisioning d'infrastructure de bout en bout en utilisant des pipelines Jenkins, Terraform pour l'infrastructure as code, Ansible pour la gestion de configuration, Docker pour la conteneurisation et Nexus pour la gestion d'artefacts.
-    \item Établi des portes de qualité et de sécurité complètes avec SonarQube pour l'analyse de qualité de code et Trivy pour l'analyse de vulnérabilités des conteneurs, garantissant des déploiements prêts pour la production.
-    \item Implémenté une stack d'observabilité complète avec Prometheus pour la collecte de métriques, Grafana pour la visualisation et les tableaux de bord, et des systèmes d'alerte pour la détection et la résolution proactive des problèmes.
-    \item Réduit le temps de provisioning d'infrastructure de 70\% et amélioré la fiabilité des déploiements grâce aux pipelines CI/CD automatisés et à l'automatisation de l'infrastructure.
+\item Développement d’applications web cloud-native déployées sur AWS.
+\item Mise en place de pipelines CI/CD avec Jenkins, Docker, Terraform et GitHub Actions.
+\item Implémentation des contrôles IAM et de la supervision via CloudWatch.
 \end{highlights}
-\end{onecolentry}
 
-\begin{twocolentry}{Juil 2024 -- Août 2024}
-\textbf{Ingénieur Full Stack (Cloud, DevOps, Web)}, RFC — Ariana, Tunisie
-\end{twocolentry}
-\begin{onecolentry}
+\textbf{Développeur Web — Stage, ESPRIT} \hfill Juillet 2023 -- Août 2023
 \begin{highlights}
-    \item Développé et déployé des applications cloud-native en utilisant Next.js avec rendu côté serveur sur l'infrastructure AWS, exploitant IAM pour la sécurité, EKS pour l'orchestration de conteneurs, ECR pour le registre de conteneurs, DynamoDB pour le stockage de données NoSQL et CloudWatch pour le monitoring.
-    \item Construit un système de gestion des stagiaires pour rationaliser les opérations internes de RFC, avec authentification utilisateur, contrôle d'accès basé sur les rôles et synchronisation de données en temps réel.
-    \item Automatisé des pipelines CI/CD complets avec Jenkins pour l'automatisation des builds, Terraform pour le provisioning d'infrastructure, Docker pour la conteneurisation et GitHub Actions pour l'intégration du contrôle de version, réduisant le temps de déploiement de 40\%.
-    \item Implémenté les meilleures pratiques pour la sécurité cloud, l'optimisation des coûts et l'évolutivité dans les environnements AWS.
+\item Développement d’une plateforme académique Full-Stack basée sur la stack MERN.
+\item Implémentation de fonctionnalités avancées de recherche et indexation avec MongoDB.
+\item Développement backend avec Express.js et Node.js.
+\item Scripts de web scraping Python pour l’ingestion automatisée de données.
+\item Conception d’interfaces responsives et amélioration de l’expérience utilisateur.
 \end{highlights}
-\end{onecolentry}
 
-\begin{twocolentry}{Juil 2023 -- Août 2023}
-\textbf{Développeur Web}, ESPRIT — Ariana, Tunisie
-\end{twocolentry}
-\begin{onecolentry}
+\textbf{Stagiaire Ingénieur Réseau (C-NOC) — Tunisie Telecom} \hfill Août 2021 -- Septembre 2021
 \begin{highlights}
-    \item Développé une application web complète de type moteur de recherche en utilisant la stack MERN (MongoDB, Express.js, React, Node.js) pour aider les étudiants d'ESPRIT à trouver et accéder efficacement aux informations des cours.
-    \item Implémenté une fonctionnalité de recherche avancée avec filtrage, tri et résultats en temps réel en utilisant les hooks React et les pipelines d'agrégation MongoDB.
-    \item Construit un système de web scraping basé sur Python en utilisant BeautifulSoup et Scrapy pour l'ingestion automatisée de données à partir de multiples sources, garantissant la fraîcheur et la précision des données.
-    \item Conçu une interface utilisateur responsive avec des principes UX modernes, garantissant une expérience optimale sur les appareils de bureau et mobiles.
+\item Travail au sein du centre national d’exploitation réseau B2B.
+\item Supervision des liaisons entreprises et gestion des incidents.
+\item Assistance au diagnostic des problèmes de routage et de disponibilité.
 \end{highlights}
-\end{onecolentry}
 
-\begin{twocolentry}{Août 2021 -- Sep 2021}
-\textbf{Ingénieur Réseau C-NOC}, Tunisie Telecom — Tunis, Tunisie
-\end{twocolentry}
-\begin{onecolentry}
+% ================= PROJECTS =================
+\section{Projets Académiques \& Techniques}
+
+\textbf{Plateforme de Supervision d’Infrastructure — RFC}
 \begin{highlights}
-    \item Fourni le support et la maintenance du réseau B2B ; surveillé les liaisons et résolu les incidents de connectivité.
+\item Conception et déploiement de tableaux de bord Grafana pour environnements cloud et infrastructure.
+\item Mise en place de stratégies d’alerting pour améliorer la réactivité opérationnelle.
 \end{highlights}
-\end{onecolentry}
 
-% ===== FORMATION =====
+\textbf{Plateforme CI/CD DevOps — ESPRIT}
+\begin{highlights}
+\item Chaîne CI/CD complète avec Jenkins, Docker, Docker Compose, SonarQube et Nexus.
+\item Déploiement Angular (frontend) et Spring Boot (backend).
+\item Supervision via Prometheus et Grafana.
+\end{highlights}
+
+\textbf{Laboratoire Cloud Privé OpenStack — ESPRIT}
+\begin{highlights}
+\item Déploiement d’un cloud privé OpenStack multi-nœuds.
+\item Interconnexion via VPN et configuration des réseaux virtuels.
+\item Exploitation de machines virtuelles et d’applications Full-Stack.
+\end{highlights}
+
+% ================= EDUCATION =================
 \section{Formation}
-\begin{twocolentry}{Sep 2020 -- Août 2025}
-\textbf{Diplôme d'Ingénieur en Informatique}, ESPRIT — Ariana, Tunisie
-\end{twocolentry}
-\begin{onecolentry}
-\begin{highlights}
-    \item Programme d'ingénierie complet couvrant : Principes d'Ingénierie Logicielle, Programmation Orientée Objet (Java, C++), Structures de Données \& Algorithmes, Systèmes de Bases de Données (SQL, NoSQL), Développement Web (HTML, CSS, JavaScript, React, Angular), Développement Backend (Node.js, Spring Boot, Django), Cloud Computing (AWS, Azure, GCP), Pratiques DevOps (Docker, Kubernetes, CI/CD), Architecture Système \& Design Patterns, Programmation Réseau, Systèmes d'Exploitation (Linux, Windows), Tests Logiciels \& Assurance Qualité, Gestion de Projet \& Méthodologies Agile, Fondamentaux Machine Learning \& IA.
-    \item Projets pratiques approfondis incluant : Applications web full-stack, Déploiement et automatisation d'infrastructure cloud, Implémentation d'architecture microservices, Développement de pipelines CI/CD, Conception et optimisation de bases de données, Développement d'applications mobiles, Projets d'intégration système.
-    \item Projet de Fin d'Études (PFE) : Développé une plateforme DevOps-as-a-Service de qualité production intégrant des recommandations d'infrastructure alimentées par l'IA, le provisioning automatisé et des solutions de monitoring complètes.
-\end{highlights}
-\end{onecolentry}
+\textbf{Diplôme d’Ingénieur en Génie Logiciel — ESPRIT} \hfill 2020 -- 2025 \\
+Ariana, Tunisie
 
-% ===== LANGUES =====
+% ================= LANGUAGES =================
 \section{Langues}
-\begin{onecolentry}
-Arabe (Natif) \,|\, Anglais (B2) \,|\, Français (B2)
-\end{onecolentry}
+Arabe (Langue maternelle) \;|\; Anglais (B2) \;|\; Français (B2)
 
 \end{document}
