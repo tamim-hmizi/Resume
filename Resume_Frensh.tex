@@ -15,16 +15,16 @@
 \usepackage{needspace}
 \usepackage{iftex}
 \usepackage{charter}
-\usepackage{microtype} % FIXES encoding & copy artifacts
 
-% ================= ATS / ENCODING =================
-\ifPDFTeX
-  \input{glyphtounicode}
-  \pdfgentounicode=1
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-  \usepackage{lmodern}
-\fi
+% ================= ATS / ENCODAGE (TOUJOURS) =================
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[final]{microtype} % améliore l’extraction du texte PDF / réduit les artefacts
+
+% Assurer une lecture machine / ATS :
+\input{glyphtounicode}
+\pdfgentounicode=1
 
 \pagestyle{empty}
 \setcounter{secnumdepth}{0}
@@ -48,10 +48,10 @@
 % ================= DOCUMENT =================
 \begin{document}
 
-% ================= HEADER =================
+% ================= EN-TÊTE =================
 \begin{center}
 {\fontsize{22}{22}\selectfont \textbf{Tamim Hmizi}} \\[4pt]
-{\large Consultant Infrastructure \,|\, Cloud \& DevOps \,|\, SaaS \& Full-Stack} \\[6pt]
+{\large Consultant en Infrastructure \,|\, Cloud \& DevOps \,|\, SaaS \& Full-Stack} \\[6pt]
 Ariana, Tunisie \;|\;
 \href{mailto:tamimhmizi@icloud.com}{tamimhmizi@icloud.com} \;|\;
 +216 21 611 816 \;|\;
@@ -60,106 +60,123 @@ Ariana, Tunisie \;|\;
 \href{https://tamim-hmizi.github.io/Portfolio/}{Portfolio}
 \end{center}
 
-% ================= PROFILE =================
+% ================= PROFIL =================
 \section{Profil Professionnel}
-\textbf{Consultant Infrastructure / Ingénieur Cloud \& DevOps} disposant d’une expérience concrète au sein d’une entreprise spécialisée en \textbf{Cloud, DevOps et développement d’applications SaaS et Full-Stack}. Solide expertise dans la conception, le déploiement, l’automatisation, la supervision et l’exploitation d’\textbf{infrastructures hybrides et cloud-native} supportant des produits logiciels modernes. Compétences confirmées en CI/CD, observabilité, réseaux, systèmes de sauvegarde et livraison applicative de bout en bout en environnements professionnels et de production.
+Ingénieur Cloud \& DevOps et Consultant en Infrastructure avec une expérience dans la livraison d’applications SaaS et full-stack.
+Capable de gérer l’ensemble du cycle de vie des systèmes logiciels modernes, depuis la conception et l’automatisation de l’infrastructure jusqu’au CI/CD, au déploiement, au monitoring et aux opérations en production.
+Solide expertise dans les environnements hybrides et cloud-native, les pipelines DevOps, l’observabilité, la sécurité et les systèmes IT d’entreprise supportant des applications scalables.
 
-% ================= SKILLS =================
-\section{Compétences Techniques}
-
-\textbf{Cloud \& Plateformes :} Azure, AWS, GCP, OpenStack, DigitalOcean, Cloud hybride, IaaS, PaaS \\
+% ================= COMPÉTENCES =================
+\section{Compétences Techniques Clés}
+\textbf{Cloud \& Plateformes :} Azure, AWS, GCP, OpenStack, DigitalOcean, Cloud Hybride, IaaS, PaaS \\
 \textbf{Conteneurs \& Orchestration :} Docker, Docker Compose, Kubernetes, Helm \\
 \textbf{DevOps \& Automatisation :} Jenkins, GitHub Actions, GitLab CI, Terraform, Ansible, Pipelines CI/CD, Infrastructure as Code (IaC), Nexus \\
-\textbf{Supervision \& Observabilité :} Grafana, Prometheus, ELK Stack, CloudWatch, Alerting, Métriques, Tableaux de bord \\
-\textbf{Sécurité \& Qualité :} Pare-feu Fortinet, VPN, Segmentation réseau, IAM, SonarQube, Trivy, OWASP \\
-\textbf{Sauvegarde \& PRA :} Commvault (sauvegardes, tests de restauration, analyse d’échecs, reporting) \\
+\textbf{Monitoring \& Observabilité :} Grafana, Prometheus, ELK Stack, CloudWatch, Alerting, Métriques, Tableaux de bord \\
+\textbf{Sécurité \& Qualité :} Pare-feux Fortinet, VPN, Segmentation réseau, IAM, SonarQube, Trivy, OWASP \\
+\textbf{Sauvegarde \& PRA :} Commvault (jobs de sauvegarde, tests de restauration, analyse des échecs, reporting) \\
 \textbf{Systèmes \& Identité :} Linux, Windows Server, Active Directory, Microsoft 365 \\
 \textbf{Langages de Programmation :} Python, Bash, Java, JavaScript, TypeScript, C, C++, C\#, PHP, Assembleur, SQL \\
 \textbf{Frameworks Backend :} FastAPI, Django, Flask, Express.js, Spring Boot, Node.js, APIs REST \\
 \textbf{Frameworks Frontend :} Angular, React, Next.js, Vue.js, HTML, CSS \\
 \textbf{Bases de Données :} MongoDB, MySQL, PostgreSQL, DynamoDB, Redis \\
-\textbf{Gestion de Code :} Git, GitHub, GitLab, Bitbucket, Gitea
+\textbf{Contrôle de Version :} Git, GitHub, GitLab, Bitbucket, Gitea
 
-% ================= EXPERIENCE =================
+% ================= EXPÉRIENCE =================
 \section{Expérience Professionnelle}
 
-\textbf{Consultant Infrastructure — RFC} \hfill Octobre 2025 -- Présent \\
+\textbf{Consultant en Infrastructure — RFC} \hfill Oct 2025 -- Présent \\
 Ariana, Tunisie
 \begin{highlights}
-\item Exploitation et support d’environnements cloud et hybrides pour la fourniture de services SaaS et d’infrastructures d’entreprise.
-\item Supervision des ressources de calcul, de stockage et d’infrastructure via des tableaux de bord Grafana.
-\item Mise en place et maintenance de pipelines de métriques basés sur Prometheus pour la détection proactive des incidents.
-\item Déploiement et administration de Gitea sur des machines virtuelles Linux en tant que plateforme Git auto-hébergée.
-\item Configuration, maintenance et dépannage de pare-feu Fortinet (politiques de sécurité, segmentation, routage, NAT).
-\item Exploitation de l’infrastructure de sauvegarde Commvault : exécution, analyse des échecs, validation des restaurations et reporting.
-\item Animation de formations techniques et d’ateliers clients autour de l’infrastructure et des stratégies de sauvegarde.
-\item Gestion des objets Active Directory et participation à l’administration des tenants Microsoft 365.
+\item Exploitation et support d’une \textbf{infrastructure cloud hybride de production} basée sur \textbf{Azure Stack Hub intégré à Azure public} pour la fourniture de services SaaS et d’entreprise.
+\item Administration et dépannage de l’\textbf{infrastructure réseau et sécurité d’entreprise} à l’aide de \textbf{pare-feux Fortinet} et d’\textbf{équipements réseau Cisco}.
+\item Mise en œuvre de la protection des endpoints et serveurs avec \textbf{l’antivirus Trend Micro} sur les environnements d’infrastructure.
+\item Exploitation et maintenance de l’\textbf{infrastructure de sauvegarde Commvault}, incluant l’exécution des sauvegardes, la validation des restaurations, l’analyse des échecs et le reporting.
+\item Support infrastructure via la gestion des incidents, le troubleshooting et le traitement des demandes de service.
+\item Animation d’ateliers techniques et de sessions de formation clients axées sur l’utilisation de l’infrastructure, la sécurité et la stratégie de sauvegarde.
+\item Gestion des services \textbf{Active Directory} et participation à l’administration des tenants \textbf{Microsoft 365}.
 \end{highlights}
 
-\textbf{Ingénieur Plateforme DevOps — Projet de Fin d’Études (PFE), RFC} \hfill Février 2025 -- Août 2025
+\textbf{Ingénieur DevOps Plateforme — Projet de Fin d’Études (PFE), RFC} \hfill Fév 2025 -- Août 2025
 \begin{highlights}
-\item Conception et développement d’une plateforme DevOps-as-a-Service pour automatiser l’analyse, le déploiement et la supervision des applications.
-\item Architecture modulaire basée sur React, Express.js, FastAPI et MongoDB.
-\item Intégration de l’API GitHub pour l’analyse des dépôts et workflows.
-\item Conception et mise en œuvre de pipelines CI/CD avec Jenkins.
-\item Automatisation du provisionnement avec Terraform et Ansible.
-\item Conteneurisation avec Docker et gestion des artefacts via Nexus.
-\item Mise en place de l’observabilité avec Prometheus et Grafana.
-\item Réduction du temps de provisionnement d’environ 70\%.
+\item Conception et implémentation d’une \textbf{plateforme SaaS DevOps-as-a-Service} pour automatiser l’analyse, le déploiement et le monitoring des applications.
+\item Développement d’une \textbf{application cœur monolithique} utilisant \textbf{React}, \textbf{Express.js}, \textbf{FastAPI} et \textbf{MongoDB}, avec une séparation claire entre frontend, API gateway et services backend.
+\item Intégration d’un \textbf{moteur d’analyse piloté par l’IA (basé LLM)} pour inspecter les dépôts Git, la structure des applications, les dépendances et les exigences d’exécution.
+\item Implémentation d’une \textbf{logique de déploiement multi-architectures}, permettant une prise de décision automatisée entre :
+\begin{itemize}[leftmargin=16pt, itemsep=2pt]
+  \item \textbf{Déploiements sur machines virtuelles} pour les applications monolithiques et one-tier.
+  \item \textbf{Déploiements Kubernetes (AKS)} pour les architectures orientées microservices.
+\end{itemize}
+\item Développement de deux \textbf{applications e-commerce utilisant la stack MERN} comme cas réels de déploiement :
+\begin{itemize}[leftmargin=16pt, itemsep=2pt]
+  \item Une \textbf{application e-commerce monolithique one-tier} déployée sur \textbf{Machine Virtuelle}, sélectionnée et recommandée par le moteur IA selon la structure du dépôt et l’analyse runtime.
+  \item Un \textbf{backend e-commerce orienté microservices} déployé sur \textbf{Kubernetes (AKS)}, recommandé par le moteur IA en raison de la décomposition des services et des exigences de scalabilité.
+\end{itemize}
+\item Automatisation des \textbf{déploiements sur VM} avec \textbf{Terraform} pour le provisioning, \textbf{Ansible} pour la configuration et \textbf{Docker / Docker Compose} pour la livraison applicative.
+\item Implémentation des \textbf{déploiements microservices AKS} avec \textbf{AKS Engine}, \textbf{kubectl} et des \textbf{manifests YAML Kubernetes} par microservice.
+\item Conception et mise en place de \textbf{pipelines CI/CD avec Jenkins}, couvrant les étapes de build, test, qualité, sécurité, gestion des artefacts et déploiement.
+\item Intégration de \textbf{SonarQube} pour l’analyse de la qualité du code et de \textbf{Nexus} pour la gestion des artefacts.
+\item Mise en œuvre complète de l’\textbf{observabilité et du monitoring} avec \textbf{Prometheus} et \textbf{Grafana}.
+\item Réduction du temps de provisioning et de déploiement de l’infrastructure d’environ \textbf{70\%} grâce à l’automatisation.
 \end{highlights}
 
-\textbf{Ingénieur Cloud \& Full-Stack — Stage, RFC} \hfill Juillet 2024 -- Août 2024
+\textbf{Ingénieur Cloud \& Full Stack — Stage, RFC} \hfill Juil 2024 -- Août 2024
 \begin{highlights}
-\item Développement d’applications web cloud-native déployées sur AWS.
-\item Mise en place de pipelines CI/CD avec Jenkins, Docker, Terraform et GitHub Actions.
-\item Implémentation des contrôles IAM et de la supervision via CloudWatch.
+\item Développement d’une \textbf{application web cloud-native} pour la \textbf{gestion des stagiaires}, couvrant l’onboarding, le suivi et les workflows administratifs.
+\item Déploiement de l’application sur \textbf{AWS EKS (Kubernetes)} avec une architecture entièrement conteneurisée.
+\item Conception et implémentation de \textbf{pipelines CI/CD de bout en bout} avec \textbf{Jenkins}, \textbf{Docker}, \textbf{Terraform} et \textbf{GitHub Actions}.
+\item Mise en œuvre des \textbf{contrôles de sécurité IAM} et du \textbf{monitoring applicatif et infrastructure} avec \textbf{Prometheus} et \textbf{Grafana}.
 \end{highlights}
 
-\textbf{Développeur Web — Stage, ESPRIT} \hfill Juillet 2023 -- Août 2023
+\textbf{Développeur Web — Stage, ESPRIT} \hfill Juil 2023 -- Août 2023
 \begin{highlights}
-\item Développement d’une plateforme académique Full-Stack basée sur la stack MERN.
-\item Implémentation de fonctionnalités avancées de recherche et indexation avec MongoDB.
-\item Développement backend avec Express.js et Node.js.
-\item Scripts de web scraping Python pour l’ingestion automatisée de données.
-\item Conception d’interfaces responsives et amélioration de l’expérience utilisateur.
+\item Conception et développement d’une \textbf{plateforme web de scraping de sites éducatifs officiels} pour collecter et agréger des cours en ligne.
+\item Implémentation de \textbf{modules de web scraping en Python} pour extraire les métadonnées des cours (titre, fournisseur, durée, niveau).
+\item Normalisation et stockage des données collectées dans une base structurée pour une recherche et un filtrage efficaces.
+\item Développement de services backend pour classer et recommander les \textbf{meilleurs cours selon les critères de recherche des utilisateurs}.
+\item Création d’une interface web responsive permettant la recherche, la comparaison et la découverte de cours pertinents issus de sources fiables.
+\item Garantie de la fiabilité des données en ciblant uniquement des \textbf{fournisseurs de cours officiels et vérifiés}.
 \end{highlights}
 
-\textbf{Stagiaire Ingénieur Réseau (C-NOC) — Tunisie Telecom} \hfill Août 2021 -- Septembre 2021
+\textbf{Stagiaire Ingénieur Réseau (C-NOC) — Tunisie Telecom} \hfill Août 2021 -- Sep 2021
 \begin{highlights}
-\item Travail au sein du centre national d’exploitation réseau B2B.
-\item Supervision des liaisons entreprises et gestion des incidents.
-\item Assistance au diagnostic des problèmes de routage et de disponibilité.
+\item Travail au sein du centre national B2B de supervision réseau.
+\item Supervision des liaisons réseau d’entreprise et gestion des incidents de connectivité.
+\item Assistance au dépannage des problèmes de routage et de disponibilité des services.
 \end{highlights}
 
-% ================= PROJECTS =================
+% ================= PROJETS =================
 \section{Projets Académiques \& Techniques}
 
-\textbf{Plateforme de Supervision d’Infrastructure — RFC}
+\textbf{Plateforme de Monitoring Entreprise — RFC}
 \begin{highlights}
-\item Conception et déploiement de tableaux de bord Grafana pour environnements cloud et infrastructure.
-\item Mise en place de stratégies d’alerting pour améliorer la réactivité opérationnelle.
+\item Conception et implémentation de \textbf{tableaux de bord Grafana personnalisés} pour la supervision des environnements cloud et infrastructure.
+\item Développement d’un \textbf{exporter Python personnalisé} communiquant avec les \textbf{APIs Azure Stack Hub} via une \textbf{application Azure AD} pour une authentification sécurisée.
+\item Collecte des métriques infrastructure et plateforme via l’exporter et exposition au format \textbf{compatible Prometheus}.
+\item Intégration de \textbf{Prometheus} pour le scraping, le stockage des métriques et l’évaluation des règles d’alerting.
+\item Visualisation des métriques et alertes dans des tableaux de bord \textbf{Grafana} afin d’améliorer la visibilité opérationnelle et les temps de réponse.
+\item Livraison d’une solution de monitoring entièrement \textbf{pilotée par le code}, avec tous les composants \textbf{conteneurisés via Docker}.
 \end{highlights}
 
 \textbf{Plateforme CI/CD DevOps — ESPRIT}
 \begin{highlights}
-\item Chaîne CI/CD complète avec Jenkins, Docker, Docker Compose, SonarQube et Nexus.
-\item Déploiement Angular (frontend) et Spring Boot (backend).
-\item Supervision via Prometheus et Grafana.
+\item Mise en place d’un pipeline CI/CD de bout en bout avec Jenkins, Docker, Docker Compose, SonarQube et Nexus.
+\item Déploiement d’applications frontend Angular et backend Spring Boot.
+\item Implémentation du monitoring avec Prometheus et Grafana.
 \end{highlights}
 
 \textbf{Laboratoire Cloud Privé OpenStack — ESPRIT}
 \begin{highlights}
-\item Déploiement d’un cloud privé OpenStack multi-nœuds.
-\item Interconnexion via VPN et configuration des réseaux virtuels.
-\item Exploitation de machines virtuelles et d’applications Full-Stack.
+\item Conception et déploiement d’un cloud privé OpenStack multi-nœuds dans le cadre de projets académiques.
+\item Interconnexion de nœuds physiques via VPN et mise en place de réseaux virtuels, sous-réseaux et routage.
+\item Déploiement et exploitation de machines virtuelles et d’applications web full-stack dans l’environnement OpenStack.
 \end{highlights}
 
-% ================= EDUCATION =================
+% ================= FORMATION =================
 \section{Formation}
 \textbf{Diplôme d’Ingénieur en Génie Logiciel — ESPRIT} \hfill 2020 -- 2025 \\
 Ariana, Tunisie
 
-% ================= LANGUAGES =================
+% ================= LANGUES =================
 \section{Langues}
 Arabe (Langue maternelle) \;|\; Anglais (B2) \;|\; Français (B2)
 
