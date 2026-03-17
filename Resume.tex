@@ -14,22 +14,21 @@
 \usepackage{hyperref}
 \usepackage{needspace}
 \usepackage{iftex}
-\usepackage{charter}
 
 % ================= ATS / ENCODING (ALWAYS) =================
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{lmodern}
-\usepackage[final]{microtype} % improves PDF text extraction / reduces artifacts
+\usepackage{charter}
+\usepackage[final]{microtype}
 
-% Ensure machine readable/ATS parsable:
 \input{glyphtounicode}
 \pdfgentounicode=1
 
 \pagestyle{empty}
 \setcounter{secnumdepth}{0}
 \setlength{\parindent}{0pt}
-\renewcommand\labelitemi{$\bullet$}
+% ATS FIX: plain dash instead of math bullet
+\renewcommand\labelitemi{-}
 
 \titleformat{\section}{\bfseries\large}{}{0pt}{}[\titlerule]
 \titlespacing{\section}{0pt}{6pt}{6pt}
@@ -49,56 +48,52 @@
 \begin{document}
 
 % ================= HEADER =================
-\begin{center}
 {\fontsize{22}{22}\selectfont \textbf{Tamim Hmizi}} \\[4pt]
-{\large Infrastructure Consultant \,|\, Cloud \& DevOps \,|\, SaaS \& Full-Stack} \\[6pt]
+{\large Full Stack and Cloud DevOps Engineer} \\[6pt]
 Ariana, Tunisia \;|\;
 \href{mailto:tamimhmizi@icloud.com}{tamimhmizi@icloud.com} \;|\;
-+216 21 611 816 \;|\;
++216 21 611 816 \\
 \href{https://linkedin.com/in/tamimhmizi}{linkedin.com/in/tamimhmizi} \;|\;
 \href{https://github.com/tamim-hmizi}{github.com/tamim-hmizi} \;|\;
 \href{https://tamim-hmizi.github.io/Portfolio/}{Portfolio}
-\end{center}
+
+\vspace{0.4cm}
 
 % ================= PROFILE =================
 \section{Professional Profile}
-Cloud \& DevOps Engineer and Infrastructure Consultant with experience in SaaS and full-stack application delivery. 
-Capable of managing the complete lifecycle of modern software systems, from infrastructure design and automation to CI/CD, deployment, monitoring, and production operations. 
-Strong background in hybrid and cloud-native environments, DevOps pipelines, observability, security, and enterprise IT systems supporting scalable applications.
-
+Full Stack and Cloud DevOps Engineer with \textbf{4+ years of hands-on project experience} spanning freelance work, academic projects, and internships --- now operating in full-time professional roles.
+Deep expertise in Kubernetes, Terraform, CI/CD automation, and cloud-native architecture across Azure, AWS, and OpenStack.
+Currently consulting for a \textbf{Microsoft CSP Gold Partner} on sovereign cloud and infrastructure security --- delivering \textbf{70\% faster deployments} and \textbf{40\% reduction in manual overhead}.
 
 % ================= SKILLS =================
 \section{Core Technical Skills}
-\textbf{Cloud \& Platforms:} Azure, AWS, GCP, OpenStack, DigitalOcean, Hybrid Cloud, IaaS, PaaS \\
-\textbf{Containers \& Orchestration:} Docker, Docker Compose, Kubernetes, Helm \\
-\textbf{DevOps \& Automation:} Jenkins, GitHub Actions, GitLab CI, Terraform, Ansible, CI/CD Pipelines, Infrastructure as Code (IaC), Nexus \\
-\textbf{Monitoring \& Observability:} Grafana, Prometheus, ELK Stack, CloudWatch, Alerting, Metrics, Dashboards \\
-\textbf{Security \& Quality:} Fortinet Firewalls, VPN, Network Segmentation, IAM, SonarQube, Trivy, OWASP \\
-\textbf{Backup \& DR:} Commvault (backup jobs, restore testing, failure analysis, reporting) \\
-\textbf{Systems \& Identity:} Linux, Windows Server, Active Directory, Microsoft 365 \\
-\textbf{Programming Languages:} Python, Bash, Java, JavaScript, TypeScript, C, C++, C\#, PHP, Assembly, SQL \\
-\textbf{Backend Frameworks:} FastAPI, Django, Flask, Express.js, Spring Boot, Node.js, REST APIs \\
-\textbf{Frontend Frameworks:} Angular, React, Next.js, Vue.js, HTML, CSS \\
-\textbf{Databases:} MongoDB, MySQL, PostgreSQL, DynamoDB, Redis \\
-\textbf{Version Control:} Git, GitHub, GitLab, Bitbucket, Gitea
+\textbf{Cloud and Platforms:} Azure (Stack Hub, AKS, Public), AWS (EKS), GCP, OpenStack, DigitalOcean, Hybrid Cloud, IaaS, PaaS \\
+\textbf{Containers and Orchestration:} Docker, Docker Compose, Kubernetes (AKS, EKS, K8s), Helm \\
+\textbf{DevOps and Automation:} Terraform, Ansible, Jenkins, GitHub Actions, GitLab CI, CI/CD Pipelines, Infrastructure as Code (IaC), Nexus, Traefik, Portainer \\
+\textbf{Monitoring and Observability:} Prometheus, Grafana, ELK Stack, CloudWatch, Custom Python Exporters, Alerting and Metrics Visualization \\
+\textbf{Security and Quality:} Fortinet Firewalls, Network Segmentation, IAM, SonarQube, Trivy, MFA, OAuth2, RBAC, Data Encryption \\
+\textbf{Backup and Storage:} Commvault, MinIO (Object Storage), Redis (Caching), SQL and NoSQL Backup Strategies \\
+\textbf{Systems and Identity:} Linux (Ubuntu, CentOS), Windows Server, Active Directory, Microsoft 365, WSL \\
+\textbf{Programming Languages:} TypeScript, JavaScript, Python, Java, C\#, PHP, Bash/Shell, SQL, C++, Assembly \\
+\textbf{Backend Architectures:} NestJS, FastAPI, Express.js, Django, Flask, Spring Boot, Node.js, RESTful and WebSocket APIs \\
+\textbf{Frontend Architectures:} React (Vite, Next.js), Angular, Vue.js, Vuex, Tailwind CSS v4, Chakra UI, shadcn/ui \\
+\textbf{Databases:} PostgreSQL, MongoDB, MySQL, Redis, Prisma, Mongoose, Sequelize, BullMQ (Job Queues)
 
 % ================= EXPERIENCE =================
 \section{Professional Experience}
 
-\textbf{Infrastructure Consultant — RFC} \hfill Oct 2025 -- Present \\
+\textbf{Infrastructure Consultant --- RFC (Microsoft CSP and Gold Partner)} \hfill Oct 2025 -- Present \\
 Ariana, Tunisia
 \begin{highlights}
-\item Operate and support \textbf{production hybrid cloud infrastructure} based on \textbf{Azure Stack Hub integrated with public Azure} to deliver SaaS and enterprise services.
-\item Administer and troubleshoot enterprise \textbf{network and security infrastructure} using \textbf{Fortinet firewalls} and \textbf{Cisco networking equipment}.
-\item Implement endpoint and server protection using \textbf{Trend Micro antivirus} across infrastructure environments.
-\item Operate and maintain \textbf{Commvault backup infrastructure}, including backup execution, restore validation, failure analysis, and reporting.
-\item Provide infrastructure support through incident handling, troubleshooting, and service request resolution.
-\item Deliver technical workshops and client training sessions focused on infrastructure usage, security, and backup strategy.
-\item Manage \textbf{Active Directory} services and participate in \textbf{Microsoft 365} tenant administration.
+\item \textbf{Engineered} and optimized \textbf{production hybrid cloud infrastructures} for a leading \textbf{Microsoft Cloud Solution Provider (CSP)}, integrating \textbf{Azure Stack Hub} with public Azure services.
+\item \textbf{Architected} sovereign cloud environments for enterprise clients, ensuring strict data residency and compliance via Microsoft-partnered architectures.
+\item \textbf{Orchestrated} enterprise-wide security and networking using \textbf{Fortinet SD-WAN} and \textbf{Cisco} logic to protect multi-tenant infrastructure.
+\item \textbf{Administered} business-critical backup operations using \textbf{Commvault}, implementing automated restore validation and failure analysis reporting.
+\item \textbf{Automated} recurring infrastructure tasks and security patches across Linux and Windows Server fleets, reducing manual overhead by \textbf{40\%}.
+\item \textbf{Facilitated} high-level technical workshops as an \textbf{Infrastructure Subject Matter Expert (SME)}, empowering clients on cloud-native security and Microsoft 365 governance.
 \end{highlights}
 
-
-\textbf{DevOps Platform Engineer — Final Year Project (PFE), RFC} \hfill Feb 2025 -- Aug 2025
+\textbf{DevOps Platform Engineer --- Final Year Project (PFE), RFC} \hfill Feb 2025 -- Aug 2025
 \begin{highlights}
 \item Designed and implemented a \textbf{DevOps-as-a-Service SaaS platform} to automate application analysis, deployment, and monitoring.
 \item Built a \textbf{monolithic core application} using \textbf{React}, \textbf{Express.js}, \textbf{FastAPI}, and \textbf{MongoDB}, with clear separation between frontend, API gateway, and backend services.
@@ -110,7 +105,7 @@ Ariana, Tunisia
 \end{itemize}
 \item Developed two \textbf{e-commerce applications using the MERN stack} as real deployment use cases:
 \begin{itemize}[leftmargin=16pt, itemsep=2pt]
-  \item A \textbf{one-tier monolithic e-commerce application} deployed on a \textbf{Virtual Machine}, selected and recommended by the AI engine based on repository structure and runtime analysis.
+  \item A \textbf{one-tier monolithic e-commerce application} deployed on a \textbf{Virtual Machine}, selected by the AI engine based on repository structure and runtime analysis.
   \item A \textbf{microservices-based e-commerce backend} deployed on \textbf{Kubernetes (AKS)}, recommended by the AI engine due to service decomposition and scalability requirements.
 \end{itemize}
 \item Automated \textbf{VM-based deployments} using \textbf{Terraform} for infrastructure provisioning, \textbf{Ansible} for configuration management, and \textbf{Docker / Docker Compose} for application delivery.
@@ -121,9 +116,7 @@ Ariana, Tunisia
 \item Reduced infrastructure provisioning and deployment time by approximately \textbf{70\%} through automation.
 \end{highlights}
 
-
-
-\textbf{Cloud \& Full Stack Engineer — Internship, RFC} \hfill Jul 2024 -- Aug 2024
+\textbf{Cloud and Full Stack Engineer --- Internship, RFC} \hfill Jul 2024 -- Aug 2024
 \begin{highlights}
 \item Developed a \textbf{cloud-native web application} for the \textbf{management of interns}, covering onboarding, tracking, and administrative workflows.
 \item Deployed the application on \textbf{AWS EKS (Kubernetes)} using a fully containerized architecture.
@@ -131,7 +124,7 @@ Ariana, Tunisia
 \item Implemented \textbf{IAM security controls} and \textbf{application and infrastructure monitoring} using \textbf{Prometheus} and \textbf{Grafana}.
 \end{highlights}
 
-\textbf{Web Developer — Internship, ESPRIT} \hfill Jul 2023 -- Aug 2023
+\textbf{Web Developer --- Internship, ESPRIT} \hfill Jul 2023 -- Aug 2023
 \begin{highlights}
 \item Designed and developed a \textbf{web platform that scrapes official educational websites} to collect and aggregate online courses.
 \item Implemented \textbf{Python-based web scraping modules} to extract course metadata such as title, provider, duration, and difficulty level.
@@ -141,9 +134,7 @@ Ariana, Tunisia
 \item Ensured data reliability by targeting only \textbf{official and verified course providers}.
 \end{highlights}
 
-
-
-\textbf{Network Engineer Intern (C-NOC) — Tunisie Telecom} \hfill Aug 2021 -- Sep 2021
+\textbf{Network Engineer Intern (C-NOC) --- Tunisie Telecom} \hfill Aug 2021 -- Sep 2021
 \begin{highlights}
 \item Worked in the national B2B Network Operations Center.
 \item Monitored enterprise network links and handled connectivity incidents.
@@ -151,37 +142,115 @@ Ariana, Tunisia
 \end{highlights}
 
 % ================= PROJECTS =================
-\section{Academic \& Technical Projects}
+\section{Projects}
 
-\textbf{Enterprise Monitoring Platform — RFC}
+\textbf{1. Enterprise Monitoring Platform --- Azure Stack Hub (RFC Production)}
 \begin{highlights}
-\item Designed and implemented \textbf{custom Grafana dashboards} to monitor cloud and infrastructure environments.
-\item Developed a \textbf{custom Python exporter} that communicates with \textbf{Azure Stack Hub APIs} using \textbf{Azure AD application registration} for secure authentication.
-\item Collected infrastructure and platform metrics through the exporter and exposed them in \textbf{Prometheus-compatible} format.
-\item Integrated \textbf{Prometheus} for metrics scraping, storage, and alerting rule evaluation.
-\item Visualized metrics and alerts in \textbf{Grafana} dashboards to improve operational visibility and response time.
-\item Delivered a fully \textbf{code-driven monitoring solution}, with all components \textbf{containerized using Docker}.
+\item \textbf{Functional Overview:} Monitors Azure Stack Hub infrastructure health, storage fabric, and tenant VM performance (IOPS/Compute) in real-time.
+\item \textbf{Engineered} an industrial-tier monitoring ecosystem for \textbf{hybrid cloud architectures} using specialized \textbf{Dockerized exporters}.
+\item \textbf{Developed} high-performance \textbf{Python/Flask} micro-exporters to harvest telemetry from \textbf{Azure Stack Hub Admin APIs} via \textbf{Service Principal OAuth2} authentication.
+\item \textbf{Architected} centralized \textbf{Prometheus} scraping clusters and multi-dimensional \textbf{Grafana} heatmaps, providing sub-minute visibility into region health, storage fabric, and tenant VM disk IOPS.
+\item \textbf{Implemented} automated alerting thresholds and sophisticated observability metrics to minimize production downtime in sovereign cloud environments.
 \end{highlights}
 
-
-\textbf{DevOps CI/CD Platform — ESPRIT}
+\textbf{2. Axynoxia ERP --- Multi-Tenant SaaS Platform}
 \begin{highlights}
-\item Built an end-to-end CI/CD pipeline using Jenkins, Docker, Docker Compose, SonarQube, and Nexus.
-\item Deployed Angular frontend and Spring Boot backend applications.
-\item Implemented monitoring with Prometheus and Grafana.
+\item \textbf{Functional Overview:} Provides a centralized business management suite with modular CRM, inventory, and accounting tools for multi-tenant organizations.
+\item \textbf{Architecting} a high-performance, \textbf{multi-tenant ERP SaaS monorepo} leveraging \textbf{NestJS}, \textbf{Prisma}, \textbf{PostgreSQL}, and \textbf{Redis}.
+\item \textbf{Implementing} industrial security standards: \textbf{MFA (QR-based)}, \textbf{RBAC}, and \textbf{Argon2} encryption for sensitive business data.
+\item \textbf{Orchestrating} resilient infrastructure using \textbf{Docker Compose} and \textbf{Traefik} for automated service discovery and secure tenant routing via reverse-proxy logic.
+\item \textbf{Developed} an auto-discovery module system allowing business plugins (CRM, Inventory) to plug into the core without code modifications.
 \end{highlights}
 
-\textbf{OpenStack Private Cloud Lab — ESPRIT}
+\textbf{3. Tickety --- High-Concurrency Enterprise Ticketing SaaS}
 \begin{highlights}
-\item Designed and deployed a multi-node OpenStack private cloud as part of academic infrastructure projects.
-\item Connected physical nodes via VPN networking and implemented virtual networks, subnets, and routing.
-\item Deployed and operated virtual machines and full-stack web applications in the OpenStack environment.
+\item \textbf{Functional Overview:} Facilitates large-scale event management, ticket booking, wallet transactions, and on-site ticket validation for organizers.
+\item \textbf{Architected} a distributed \textbf{SaaS monorepo} (pnpm) using \textbf{React}, \textbf{NestJS}, and \textbf{Prisma}, sustaining thousands of concurrent booking transactions per second.
+\item \textbf{Designed} highly normalized \textbf{PostgreSQL} schemas with optimized indexing and \textbf{Read/Write split} considerations to handle tidal-wave traffic spikes.
+\item \textbf{Integrated} real-time seat inventory synchronization using \textbf{WebSockets (Socket.io)} and atomic database transactions to eliminate ticket double-booking risks.
+\item \textbf{Deployed} via automated \textbf{CI/CD pipelines} with rigorous quality gates, load testing scenarios, and \textbf{Docker} containerization.
+\end{highlights}
+
+\textbf{4. Roehrdanz Immobilien --- Modern CMS and Real Estate Platform}
+\begin{highlights}
+\item \textbf{Functional Overview:} Manages real estate property listings, customer inquiries, and professional service presentations with an integrated admin panel.
+\item \textbf{Spearheaded} the delivery of a state-of-the-art real estate platform featuring a custom \textbf{MERN-based CMS} (React 19, Express 5, MongoDB).
+\item \textbf{Engineered} a robust admin control-plane for listing administration, featuring \textbf{asynchronous Base64 image processing} and dynamic SEO-optimized content rendering.
+\item \textbf{Developed} a secure employee-only dashboard using \textbf{session-based authentication}, Bcryptjs hashing, and \textbf{RBAC} for content moderation.
+\item \textbf{Optimized} frontend performance using \textbf{Vite} and \textbf{Tailwind CSS v4}, achieving near-instant load times for high-resolution property galleries.
+\end{highlights}
+
+\textbf{5. B-moovd --- High-Performance Mobile Ecosystem}
+\begin{highlights}
+\item \textbf{Functional Overview:} A high-performance mobility application for seamless booking, payment orchestration, and real-time user engagement.
+\item \textbf{Engineered} a reactive, cross-platform mobile application using \textbf{Flutter}, implementing \textbf{Provider-driven state management} and fluid \textbf{60FPS animations}.
+\item \textbf{Integrated} RESTful API handshakes with \textbf{Dio} and local persistent caching to ensure a seamless offline-first user experience.
+\item \textbf{Optimized} application bundle size and resource allocation, ensuring high performance across a wide range of mobile hardware.
+\end{highlights}
+
+\textbf{6. Confortex --- Shopify E-commerce (confortex.shop)}
+\begin{highlights}
+\item \textbf{Developed} a full-featured \textbf{Shopify} e-commerce store for a premium Tunisian bedding brand, covering mattresses, pillows, beds, baby products, and linen.
+\item \textbf{Configured} multi-collection product architecture, custom storefront theming, and SEO-optimized blog content to drive organic traffic.
+\item \textbf{Implemented} free delivery promotions, newsletter integration, and a multi-showroom contact system across 3 physical locations in Ariana, Tunisia.
+\end{highlights}
+
+\textbf{7. Vie Sublime --- Shopify E-commerce (viesublime.tn)}
+\begin{highlights}
+\item \textbf{Built} a premium \textbf{Shopify} storefront for a high-end Tunisian furniture brand specializing in artisanal interior, office, outdoor, and school furniture.
+\item \textbf{Structured} multi-collection catalog (Tables and Chairs, Indoor Furniture, Office, School, Garden) with custom theming aligned to a luxury brand identity.
+\item \textbf{Delivered} a content-driven SEO blog, newsletter integration, and multi-location showroom management to support both online and physical sales channels.
+\end{highlights}
+
+\textbf{8. MERN E-commerce --- Industrial SaaS Infrastructure}
+\begin{highlights}
+\item \textbf{Functional Overview:} An industrial-grade retail platform for managing product catalogs, customer orders, and secure checkout workflows.
+\item \textbf{Engineered} a full-featured e-commerce ecosystem using the \textbf{MERN} stack, focusing on industrial-grade security via \textbf{JWT} and \textbf{Argon2}.
+\item \textbf{Developed} an advanced admin dashboard with real-time order tracking, inventory management, and \textbf{Multer-integrated} cloud asset handling.
+\item \textbf{Implemented} responsive frontend architecture with \textbf{Redux Toolkit} for complex state persistence across purchasing workflows.
+\end{highlights}
+
+\textbf{9. OMHY Entertainment --- Managed Video Hub (\href{https://www.omhyfamily.com/}{omhyfamily.com})}
+\begin{highlights}
+\item \textbf{Functional Overview:} A premium digital media hub for high-fidelity video streaming, content portfolios, and interactive user experiences.
+\item \textbf{Developed} a premium video-streaming and portfolio platform using \textbf{React (Chakra UI)} and \textbf{GSAP} for high-fidelity interactive animations.
+\item \textbf{Orchestrated} Zero-Downtime deployments via \textbf{Jenkins} pipelines, integrating automated quality gates and security audits.
+\item \textbf{Managed} hybrid database architectures (MongoDB and MySQL) to balance flexible content metadata and strict user transaction history.
+\end{highlights}
+
+\textbf{10. Jektis Travel --- Global E-Tourism Platform}
+\begin{highlights}
+\item \textbf{Functional Overview:} A global tourism discovery platform for booking flights and hotels with automated real-time price scraping and secure payments.
+\item \textbf{Architected} an automated tourism platform in \textbf{PHP}, integrating \textbf{Stripe} for payment orchestration and custom web scraping modules for real-time discovery.
+\item \textbf{Developed} automated transactional workflows using \textbf{PHPMailer} and custom cron jobs for booking status updates and guest notifications.
+\end{highlights}
+
+\textbf{11. New Journey --- Global Consulting Ecosystem}
+\begin{highlights}
+\item \textbf{Functional Overview:} A global consulting ecosystem to connect clients with expert advisors, managing professional interactions and service delivery.
+\item \textbf{Developed} a comprehensive consulting platform utilizing \textbf{Symfony 7} and \textbf{PHP 8.2}, with a focus on modular controller architecture and \textbf{Doctrine ORM}.
+\item \textbf{Implemented} dynamic UI components using \textbf{Symfony UX Turbo} and Stimulus for a high-performance, SPA-like user experience.
+\item \textbf{Orchestrated} the development environment using \textbf{Docker Compose}, ensuring parity between local development and production-ready deployments.
+\item \textbf{Integrated} secure multi-user authentication and role-based access control (RBAC) to manage client and admin interactions.
+\end{highlights}
+
+\textbf{12. DevOps CI/CD Hub --- Industrial Infrastructure (ESPRIT)}
+\begin{highlights}
+\item \textbf{Built} a full-scale CI/CD platform using \textbf{Jenkins}, \textbf{SonarQube}, and \textbf{Nexus} for versioning artifacts and code quality governance.
+\item \textbf{Automated} the deployment of \textbf{Angular} and \textbf{Spring Boot} microservices with comprehensive security auditing via \textbf{Trivy}.
+\end{highlights}
+
+\textbf{13. OpenStack Private Cloud Lab --- Hybrid Infrastructure (ESPRIT)}
+\begin{highlights}
+\item \textbf{Deployed} a multi-node \textbf{OpenStack} private cloud, orchestrating virtual networks, subnets, and \textbf{VPN-over-physical} nodes.
+\item \textbf{Managed} the entire lifecycle of virtualized workloads, implementing automated scaling and high-availability routing for guest web applications.
 \end{highlights}
 
 % ================= EDUCATION =================
 \section{Education}
-\textbf{Software Engineering Degree — ESPRIT} \hfill 2020 -- 2025 \\
-Ariana, Tunisia
+\textbf{Software Engineering Degree --- ESPRIT} \hfill 2020 -- 2025 \\
+Ariana, Tunisia \\
+3 years General Software Engineering \;|\; 2 years Specialty: \textbf{ArcTIC --- Cloud Architecture and DevOps}
 
 % ================= LANGUAGES =================
 \section{Languages}

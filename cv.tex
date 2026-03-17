@@ -1,0 +1,258 @@
+\documentclass[10pt, letterpaper]{article}
+
+% ================= PACKAGES =================
+\usepackage[
+    ignoreheadfoot,
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm
+]{geometry}
+
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{needspace}
+\usepackage{iftex}
+
+% ================= ATS / ENCODING (ALWAYS) =================
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage[final]{microtype}
+
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\renewcommand\labelitemi{-}
+
+\titleformat{\section}{\bfseries\large}{}{0pt}{}[\titlerule]
+\titlespacing{\section}{0pt}{6pt}{6pt}
+
+\newenvironment{highlights}{
+\begin{itemize}[leftmargin=12pt, itemsep=2pt]
+}{
+\end{itemize}
+}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=black
+}
+
+% ================= DOCUMENT =================
+\begin{document}
+
+% ================= HEADER =================
+{\fontsize{22}{22}\selectfont \textbf{Tamim Hmizi}} \\[4pt]
+{\large Ingenieur Full Stack et Cloud DevOps} \\[6pt]
+Ariana, Tunisie \;|\;
+\href{mailto:tamimhmizi@icloud.com}{tamimhmizi@icloud.com} \;|\;
++216 21 611 816 \\
+\href{https://linkedin.com/in/tamimhmizi}{linkedin.com/in/tamimhmizi} \;|\;
+\href{https://github.com/tamim-hmizi}{github.com/tamim-hmizi} \;|\;
+\href{https://tamim-hmizi.github.io/Portfolio/}{Portfolio}
+
+\vspace{0.4cm}
+
+% ================= PROFILE =================
+\section{Profil Professionnel}
+Ingenieur Full Stack et Cloud DevOps avec \textbf{plus de 4 ans d'experience pratique} couvrant des projets freelance, academiques et des stages --- desormais en poste professionnel a temps plein.
+Expertise approfondie en Kubernetes, Terraform, automatisation CI/CD et architecture cloud-native sur Azure, AWS et OpenStack.
+Actuellement consultant pour un \textbf{partenaire Gold Microsoft CSP} sur le cloud souverain et la securite des infrastructures --- delivrant \textbf{70\% de deployments plus rapides} et \textbf{40\% de reduction des taches manuelles}.
+
+% ================= SKILLS =================
+\section{Competences Techniques}
+\textbf{Cloud et Plateformes:} Azure (Stack Hub, AKS, Public), AWS (EKS), GCP, OpenStack, DigitalOcean, Cloud Hybride, IaaS, PaaS \\
+\textbf{Conteneurs et Orchestration:} Docker, Docker Compose, Kubernetes (AKS, EKS, K8s), Helm \\
+\textbf{DevOps et Automatisation:} Terraform, Ansible, Jenkins, GitHub Actions, GitLab CI, Pipelines CI/CD, Infrastructure as Code (IaC), Nexus, Traefik, Portainer \\
+\textbf{Monitoring et Observabilite:} Prometheus, Grafana, ELK Stack, CloudWatch, Exporters Python personnalises, Alerting et Visualisation de metriques \\
+\textbf{Securite et Qualite:} Pare-feux Fortinet, Segmentation reseau, IAM, SonarQube, Trivy, MFA, OAuth2, RBAC, Chiffrement des donnees \\
+\textbf{Sauvegarde et Stockage:} Commvault, MinIO (Stockage objet), Redis (Cache), Strategies de sauvegarde SQL et NoSQL \\
+\textbf{Systemes et Identite:} Linux (Ubuntu, CentOS), Windows Server, Active Directory, Microsoft 365, WSL \\
+\textbf{Langages de Programmation:} TypeScript, JavaScript, Python, Java, C\#, PHP, Bash/Shell, SQL, C++, Assembleur \\
+\textbf{Architectures Backend:} NestJS, FastAPI, Express.js, Django, Flask, Spring Boot, Node.js, APIs RESTful et WebSocket \\
+\textbf{Architectures Frontend:} React (Vite, Next.js), Angular, Vue.js, Vuex, Tailwind CSS v4, Chakra UI, shadcn/ui \\
+\textbf{Bases de donnees:} PostgreSQL, MongoDB, MySQL, Redis, Prisma, Mongoose, Sequelize, BullMQ (Files de taches)
+
+% ================= EXPERIENCE =================
+\section{Experience Professionnelle}
+
+\textbf{Consultant Infrastructure --- RFC (Microsoft CSP et Partenaire Gold)} \hfill Oct 2025 -- Present \\
+Ariana, Tunisie
+\begin{highlights}
+\item \textbf{Concu} et optimise des \textbf{infrastructures cloud hybrides en production} pour un leader \textbf{Microsoft Cloud Solution Provider (CSP)}, integrant \textbf{Azure Stack Hub} avec les services Azure publics.
+\item \textbf{Architecture} des environnements cloud souverains pour des clients entreprises, garantissant la residentialite des donnees et la conformite via des architectures certifiees Microsoft.
+\item \textbf{Deploye} la securite et le reseau a l'echelle de l'entreprise via \textbf{Fortinet SD-WAN} et la logique \textbf{Cisco} pour proteger une infrastructure multi-tenant.
+\item \textbf{Administre} les operations de sauvegarde critiques avec \textbf{Commvault}, en implementant la validation automatisee des restaurations et les rapports d'analyse des pannes.
+\item \textbf{Automatise} les taches d'infrastructure recurrentes et les correctifs de securite sur les parcs Linux et Windows Server, reduisant la charge manuelle de \textbf{40\%}.
+\item \textbf{Anime} des ateliers techniques de haut niveau en tant qu'\textbf{Expert en Infrastructure (SME)}, accompagnant les clients sur la securite cloud-native et la gouvernance Microsoft 365.
+\end{highlights}
+
+\textbf{Ingenieur Plateforme DevOps --- Projet de Fin d'Etudes (PFE), RFC} \hfill Fev 2025 -- Aout 2025
+\begin{highlights}
+\item Concu et implemente une \textbf{plateforme SaaS DevOps-as-a-Service} pour automatiser l'analyse, le deploiement et le monitoring d'applications.
+\item Developpe une \textbf{application core monolithique} avec \textbf{React}, \textbf{Express.js}, \textbf{FastAPI} et \textbf{MongoDB}, avec une separation claire entre frontend, API gateway et services backend.
+\item Integre un \textbf{moteur d'analyse IA base sur LLM} pour inspecter les depots Git, la structure des applications, les dependances et les exigences d'execution.
+\item Implemente une \textbf{logique de deploiement multi-architecture}, permettant une prise de decision automatisee entre :
+\begin{itemize}[leftmargin=16pt, itemsep=2pt]
+  \item \textbf{Deploiements sur Machine Virtuelle} pour les applications monolithiques et a un seul niveau.
+  \item \textbf{Deploiements Kubernetes (AKS)} pour les architectures a base de microservices.
+\end{itemize}
+\item Developpe deux \textbf{applications e-commerce avec la stack MERN} comme cas d'usage reels de deploiement :
+\begin{itemize}[leftmargin=16pt, itemsep=2pt]
+  \item Une \textbf{application e-commerce monolithique} deployee sur une \textbf{Machine Virtuelle}, selectionnee par le moteur IA sur la base de l'analyse de la structure du depot.
+  \item Un \textbf{backend e-commerce base sur des microservices} deploye sur \textbf{Kubernetes (AKS)}, recommande par le moteur IA en raison de la decomposition en services et des besoins en scalabilite.
+\end{itemize}
+\item Automatise les \textbf{deploiements sur VM} avec \textbf{Terraform} pour le provisionnement, \textbf{Ansible} pour la gestion de configuration, et \textbf{Docker / Docker Compose} pour la livraison applicative.
+\item Implemente les \textbf{deploiements microservices AKS} avec \textbf{AKS Engine}, \textbf{kubectl} et des \textbf{manifestes YAML Kubernetes} par microservice.
+\item Concu et implemente des \textbf{pipelines CI/CD avec Jenkins}, couvrant les etapes de build, test, qualite, securite, gestion des artefacts et deploiement.
+\item Integre \textbf{SonarQube} pour l'analyse de la qualite du code et \textbf{Nexus} pour la gestion des artefacts.
+\item Mis en place une \textbf{observabilite et un monitoring complets} avec \textbf{Prometheus} et \textbf{Grafana}.
+\item Reduit le temps de provisionnement et de deploiement d'infrastructure d'environ \textbf{70\%} grace a l'automatisation.
+\end{highlights}
+
+\textbf{Ingenieur Cloud et Full Stack --- Stage, RFC} \hfill Juil 2024 -- Aout 2024
+\begin{highlights}
+\item Developpe une \textbf{application web cloud-native} pour la \textbf{gestion des stagiaires}, couvrant l'onboarding, le suivi et les workflows administratifs.
+\item Deploye l'application sur \textbf{AWS EKS (Kubernetes)} via une architecture entierement containerisee.
+\item Concu et implemente des \textbf{pipelines CI/CD end-to-end} avec \textbf{Jenkins}, \textbf{Docker}, \textbf{Terraform} et \textbf{GitHub Actions}.
+\item Implemente des \textbf{controles de securite IAM} et un \textbf{monitoring applicatif et infrastructure} avec \textbf{Prometheus} et \textbf{Grafana}.
+\end{highlights}
+
+\textbf{Developpeur Web --- Stage, ESPRIT} \hfill Juil 2023 -- Aout 2023
+\begin{highlights}
+\item Concu et developpe une \textbf{plateforme web de scraping de sites educatifs officiels} pour collecter et agreger des cours en ligne.
+\item Implemente des \textbf{modules de scraping Python} pour extraire des metadonnees de cours telles que le titre, le fournisseur, la duree et le niveau de difficulte.
+\item Normalise et stocke les donnees extraites dans une base de donnees structuree pour une recherche et un filtrage efficaces.
+\item Developpe des services backend pour classer et recommander les \textbf{meilleurs cours selon les criteres de recherche de l'utilisateur}.
+\item Construit une interface web responsive permettant aux utilisateurs de rechercher, comparer et decouvrir des cours pertinents depuis des sources fiables.
+\item Assure la fiabilite des donnees en ciblant uniquement les \textbf{fournisseurs de cours officiels et verifies}.
+\end{highlights}
+
+\textbf{Stagiaire Ingenieur Reseau (C-NOC) --- Tunisie Telecom} \hfill Aout 2021 -- Sep 2021
+\begin{highlights}
+\item Travaille au sein du Centre National des Operations Reseau B2B.
+\item Supervise les liens reseau entreprise et gere les incidents de connectivite.
+\item Participe au depannage des problemes de routage et de disponibilite des services.
+\end{highlights}
+
+% ================= PROJECTS =================
+\section{Projets}
+
+\textbf{1. Plateforme de Monitoring Entreprise --- Azure Stack Hub (Production RFC)}
+\begin{highlights}
+\item \textbf{Vue d'ensemble:} Surveille en temps reel la sante de l'infrastructure Azure Stack Hub, le fabric de stockage et les performances des VM locataires (IOPS/Calcul).
+\item \textbf{Concu} un ecosysteme de monitoring industriel pour des \textbf{architectures cloud hybrides} via des \textbf{exporters Dockerises specialises}.
+\item \textbf{Developpe} des micro-exporters haute performance en \textbf{Python/Flask} pour collecter la telemetrie depuis les \textbf{APIs Admin Azure Stack Hub} via authentification \textbf{Service Principal OAuth2}.
+\item \textbf{Architecture} des clusters de scraping \textbf{Prometheus} centralises et des heatmaps \textbf{Grafana} multi-dimensionnelles, offrant une visibilite infra-minute sur la sante de la region, le fabric de stockage et les IOPS disque des VM.
+\item \textbf{Implemente} des seuils d'alerte automatises et des metriques d'observabilite avancees pour minimiser les temps d'arret en environnements cloud souverains.
+\end{highlights}
+
+\textbf{2. Axynoxia ERP --- Plateforme SaaS Multi-Tenant}
+\begin{highlights}
+\item \textbf{Vue d'ensemble:} Fournit une suite de gestion d'entreprise centralisee avec des outils modulaires CRM, inventaire et comptabilite pour des organisations multi-tenant.
+\item \textbf{En cours d'architecture:} un monorepo SaaS ERP haute performance et \textbf{multi-tenant} s'appuyant sur \textbf{NestJS}, \textbf{Prisma}, \textbf{PostgreSQL} et \textbf{Redis}.
+\item \textbf{Implementation} de standards de securite industriels : \textbf{MFA (QR-based)}, \textbf{RBAC} et chiffrement \textbf{Argon2} pour les donnees metiers sensibles.
+\item \textbf{Orchestration} d'une infrastructure resiliente avec \textbf{Docker Compose} et \textbf{Traefik} pour la decouverte de services automatisee et le routage securise des tenants via reverse-proxy.
+\item \textbf{Developpe} un systeme de modules a auto-decouverte permettant aux plugins metiers (CRM, Inventaire) de s'integrer au core sans modification de code.
+\end{highlights}
+
+\textbf{3. Tickety --- SaaS de Billetterie Entreprise a Haute Concurrence}
+\begin{highlights}
+\item \textbf{Vue d'ensemble:} Facilite la gestion d'evenements a grande echelle, la reservation de billets, les transactions wallet et la validation sur site pour les organisateurs.
+\item \textbf{Architecture} d'un monorepo SaaS distribue (pnpm) avec \textbf{React}, \textbf{NestJS} et \textbf{Prisma}, supportant des milliers de transactions de reservation simultanees par seconde.
+\item \textbf{Concu} des schemas \textbf{PostgreSQL} hautement normalises avec indexation optimisee et considerations de \textbf{separation Lecture/Ecriture} pour absorber les pics de trafic.
+\item \textbf{Integre} la synchronisation en temps reel des inventaires de places via \textbf{WebSockets (Socket.io)} et des transactions atomiques pour eliminer les risques de double reservation.
+\item \textbf{Deploye} via des \textbf{pipelines CI/CD} automatises avec des portes de qualite rigoureuses, des scenarios de tests de charge et une containerisation \textbf{Docker}.
+\end{highlights}
+
+\textbf{4. Roehrdanz Immobilien --- Plateforme CMS et Immobilier Moderne}
+\begin{highlights}
+\item \textbf{Vue d'ensemble:} Gere les annonces immobilieres, les demandes clients et la presentation des services professionnels avec un panneau d'administration integre.
+\item \textbf{Pilote} la livraison d'une plateforme immobiliere moderne avec un \textbf{CMS MERN personnalise} (React 19, Express 5, MongoDB).
+\item \textbf{Concu} un plan de controle admin robuste pour la gestion des annonces, avec \textbf{traitement d'images Base64 asynchrone} et rendu de contenu SEO-optimise dynamique.
+\item \textbf{Developpe} un tableau de bord reserve aux employes avec \textbf{authentification par session}, hachage Bcryptjs et \textbf{RBAC} pour la moderation de contenu.
+\item \textbf{Optimise} les performances frontend avec \textbf{Vite} et \textbf{Tailwind CSS v4}, atteignant des temps de chargement quasi-instantanes pour les galeries de proprietes haute resolution.
+\end{highlights}
+
+\textbf{5. B-moovd --- Ecosysteme Mobile Haute Performance}
+\begin{highlights}
+\item \textbf{Vue d'ensemble:} Application de mobilite haute performance pour la reservation, l'orchestration de paiements et l'engagement utilisateur en temps reel.
+\item \textbf{Concu} une application mobile cross-platform reactive avec \textbf{Flutter}, implementant une \textbf{gestion d'etat Provider} et des \textbf{animations fluides a 60FPS}.
+\item \textbf{Integre} des echanges API RESTful avec \textbf{Dio} et un cache local persistant pour une experience utilisateur offline-first transparente.
+\item \textbf{Optimise} la taille du bundle et l'allocation des ressources pour garantir de hautes performances sur une large gamme de materiels mobiles.
+\end{highlights}
+
+\textbf{6. Confortex --- E-commerce Shopify (confortex.shop)}
+\begin{highlights}
+\item \textbf{Developpe} une boutique \textbf{Shopify} complete pour une marque tunisienne premium de literie, couvrant matelas, oreillers, lits, produits bebe et linge.
+\item \textbf{Configure} une architecture produit multi-collection, un theme de vitrine personnalise et du contenu blog SEO-optimise pour generer du trafic organique.
+\item \textbf{Implemente} des promotions de livraison gratuite, l'integration newsletter et un systeme de contact multi-showroom sur 3 emplacements physiques a Ariana, Tunisie.
+\end{highlights}
+
+\textbf{7. Vie Sublime --- E-commerce Shopify (viesublime.tn)}
+\begin{highlights}
+\item \textbf{Cree} une vitrine \textbf{Shopify} premium pour une marque tunisienne haut de gamme de mobilier artisanal interieur, de bureau, d'exterieur et scolaire.
+\item \textbf{Structure} un catalogue multi-collection (Tables et Chaises, Mobilier Interieur, Bureau, Scolaire, Jardin) avec un theme personnalise aligne sur une identite de marque luxe.
+\item \textbf{Livre} un blog SEO axe contenu, une integration newsletter et une gestion de showrooms multi-emplacements pour soutenir les canaux de vente en ligne et physiques.
+\end{highlights}
+
+\textbf{8. MERN E-commerce --- Infrastructure SaaS Industrielle}
+\begin{highlights}
+\item \textbf{Vue d'ensemble:} Plateforme retail de niveau industriel pour la gestion des catalogues produits, des commandes clients et des workflows de paiement securises.
+\item \textbf{Concu} un ecosysteme e-commerce complet avec la stack \textbf{MERN}, axe sur la securite industrielle via \textbf{JWT} et \textbf{Argon2}.
+\item \textbf{Developpe} un tableau de bord admin avance avec suivi des commandes en temps reel, gestion des stocks et gestion des assets cloud avec \textbf{Multer}.
+\item \textbf{Implemente} une architecture frontend responsive avec \textbf{Redux Toolkit} pour la persistance d'etat complexe dans les workflows d'achat.
+\end{highlights}
+
+\textbf{9. OMHY Entertainment --- Hub Video Manage (\href{https://www.omhyfamily.com/}{omhyfamily.com})}
+\begin{highlights}
+\item \textbf{Vue d'ensemble:} Hub media numerique premium pour le streaming video haute fidelite, les portfolios de contenu et les experiences utilisateur interactives.
+\item \textbf{Developpe} une plateforme de streaming video et de portfolio premium avec \textbf{React (Chakra UI)} et \textbf{GSAP} pour des animations interactives haute fidelite.
+\item \textbf{Orchestré} des deployments sans interruption via des pipelines \textbf{Jenkins}, integrant des portes de qualite automatisees et des audits de securite.
+\item \textbf{Gere} des architectures de bases de donnees hybrides (MongoDB et MySQL) pour equilibrer les metadonnees de contenu flexibles et l'historique strict des transactions utilisateurs.
+\end{highlights}
+
+\textbf{10. Jektis Travel --- Plateforme E-Tourisme Mondiale}
+\begin{highlights}
+\item \textbf{Vue d'ensemble:} Plateforme mondiale de decouverte touristique pour la reservation de vols et d'hotels avec scraping automatise de prix en temps reel et paiements securises.
+\item \textbf{Architecture} une plateforme touristique automatisee en \textbf{PHP}, integrant \textbf{Stripe} pour l'orchestration des paiements et des modules de scraping web personnalises pour la decouverte en temps reel.
+\item \textbf{Developpe} des workflows transactionnels automatises avec \textbf{PHPMailer} et des cron jobs personnalises pour les mises a jour de statut de reservation et les notifications clients.
+\end{highlights}
+
+\textbf{11. New Journey --- Ecosysteme de Conseil Mondial}
+\begin{highlights}
+\item \textbf{Vue d'ensemble:} Ecosysteme de conseil mondial pour connecter les clients avec des experts, gerant les interactions professionnelles et la prestation de services.
+\item \textbf{Developpe} une plateforme de conseil complete avec \textbf{Symfony 7} et \textbf{PHP 8.2}, axee sur une architecture de controllers modulaire et \textbf{Doctrine ORM}.
+\item \textbf{Implemente} des composants UI dynamiques avec \textbf{Symfony UX Turbo} et Stimulus pour une experience utilisateur haute performance de type SPA.
+\item \textbf{Orchestré} l'environnement de developpement avec \textbf{Docker Compose}, garantissant la parite entre le developpement local et les deployments en production.
+\item \textbf{Integre} une authentification multi-utilisateurs securisee et un controle d'acces base sur les roles (RBAC) pour gerer les interactions clients et administrateurs.
+\end{highlights}
+
+\textbf{12. Hub CI/CD DevOps --- Infrastructure Industrielle (ESPRIT)}
+\begin{highlights}
+\item \textbf{Construit} une plateforme CI/CD a grande echelle avec \textbf{Jenkins}, \textbf{SonarQube} et \textbf{Nexus} pour la gestion des artefacts et la gouvernance de la qualite du code.
+\item \textbf{Automatise} le deploiement de microservices \textbf{Angular} et \textbf{Spring Boot} avec un audit de securite complet via \textbf{Trivy}.
+\end{highlights}
+
+\textbf{13. Laboratoire Cloud Prive OpenStack --- Infrastructure Hybride (ESPRIT)}
+\begin{highlights}
+\item \textbf{Deploye} un cloud prive \textbf{OpenStack} multi-noeuds, orchestrant des reseaux virtuels, des sous-reseaux et des noeuds \textbf{VPN-over-physical}.
+\item \textbf{Gere} le cycle de vie complet des charges de travail virtualisees, en implementant la mise a l'echelle automatisee et le routage haute disponibilite pour les applications web hebergees.
+\end{highlights}
+
+% ================= EDUCATION =================
+\section{Formation}
+\textbf{Diplome d'Ingenieur en Genie Logiciel --- ESPRIT} \hfill 2020 -- 2025 \\
+Ariana, Tunisie \\
+3 ans Genie Logiciel General \;|\; 2 ans Specialite : \textbf{ArcTIC --- Architecture Cloud et DevOps}
+
+% ================= LANGUAGES =================
+\section{Langues}
+Arabe (Langue maternelle) \;|\; Anglais (B2) \;|\; Francais (B2)
+
+\end{document}
